@@ -115,7 +115,7 @@
                                     from further use of our sites.</p>
                             </div>
                             <div class="proceed-btn text-center">
-                                <button class="btn primary-btn" type="submit" id="proceed-btn">Proceed</button>
+                                <button class="btn primary-btn" type="submit" id="proceed-btn">Create an account</button>
                             </div>
                         </div>
                     </form>
@@ -215,9 +215,9 @@
     <!-- Popup start -->
     <div class="success-popup d-none" id="popup">
         <div class="popup-box bg-white text-center position-relative ">
-            <h5 class="text-primary">Thankyou!</h5>
-            <p>An email has been sent to your account with the
-                link to your new dashboard!</p>
+            <h5 class="text-primary">Email Verification Required</h5>
+            <p>A verification email has been sent to your registered email address. Please check your inbox (and spam folder) and click
+            the activation link to verify your account.</p>
             <div class="close-btn">
                 <button class="btn" type="submit" id="close-btn"><img src="assets/icons/close.svg" alt="close"></button>
             </div>
@@ -313,13 +313,10 @@
                     "extendedTimeOut": "1000",
                 })
             })
-
-            console.log(data);
         })
 
         const sendEmail = () => {
             axios.post('https://health-monitor-backend.vercel.app/api/email_verification', emailData).then((res) => {
-                console.log(res.data);
                 localStorage.removeItem('email');
                 localStorage.getItem('username');
             }).catch((error) => {

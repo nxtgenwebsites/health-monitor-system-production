@@ -66,7 +66,7 @@
           <!-- Login Form Start -->
           <form id="login-form" class="login-from" id="login-form">
             <div class="email my-4">
-              <input type="email" placeholder="Email" required id="login-email">
+              <input type="text" placeholder="Email or username" required id="login-email">
             </div>
             <div class="password mt-4 position-relative">
               <input type="password" placeholder="Password" required id="login-password">
@@ -74,7 +74,7 @@
                 alt="">
             </div>
             <div class="forget-pass">
-              <a href="" class="text-decoration-none forgot-password pt-1
+              <a href="/forgot-password.html" class="text-decoration-none forgot-password pt-1
                 ">Forgot password?</a>
             </div>
             <div class="submit-button d-flex justify-content-center align-items-center">
@@ -91,7 +91,7 @@
               <input type="email" placeholder="Email" id="signup-email" required>
             </div>
             <div class="signup-button  text-center mt-4">
-              <button class="btn primary-btn py-1">Create an account</button>
+              <button class="btn primary-btn py-1">Proceed</button>
             </div>
           </form>
           <!-- Sigup Form End -->
@@ -231,6 +231,10 @@
 
         console.log(res.data);
         if (res.data.user.isActive === false) {
+          localStorage.setItem('non-active-email' , res.data.user.email);
+          localStorage.setItem('non-active-id' , res.data.user.id);
+          localStorage.setItem('non-active-username' , res.data.user.username);
+          console.log(localStorage.getItem('un-active-email'));
           return location.href = '/nonacticve-user.html'; 
         }
 
