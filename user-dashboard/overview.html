@@ -579,9 +579,11 @@
             </div>
             <div class="dropdown-content ps-4">
                 <ul class="custom-bullets">
-                    <li><a href="/user-dashboard/manage-care-requests.html" class="dropdown-item-custom">CareRequests</a></li>
-                    
-                    <li><a href="https://symptom-checker-nine.vercel.app/" class="dropdown-item-custom">Summariser</a></li>
+                    <li><a href="/user-dashboard/manage-care-requests.html"
+                            class="dropdown-item-custom">CareRequests</a></li>
+
+                    <li><a href="https://symptom-checker-nine.vercel.app/" class="dropdown-item-custom">Summariser</a>
+                    </li>
                     <li><a href="/user-dashboard/diagnostics.html" class="dropdown-item-custom">Diagnoser</a></li>
                 </ul>
             </div>
@@ -1467,8 +1469,8 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="bloodPressureAlert" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" style="max-width: 572px; margin: auto;">
+    <div class="modal fade d-none" id="bloodPressureAlert" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered d-none" style="max-width: 572px; margin: auto;">
             <div class="modal-content border-0 rounded-4"
                 style="background-color: #ffffff; height: 282px; flex-shrink: 0;">
                 <div class="modal-body p-4">
@@ -1541,6 +1543,18 @@
     </div>
     <!-- Share Message end -->
     <script>
+            const token = localStorage.getItem('token');
+
+                if (!token) {
+                    document.querySelector('.log-out-btn').style.display = 'none';
+                } else {
+                    document.querySelector('.log-out-btn').addEventListener('click', () => {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('u_id');
+                        location.reload();
+                    });
+                }
+                
         function redirectToPatientSearch(pageURL) {
             localStorage.setItem("redirectAfterPopup", pageURL);
             window.location.href = "/user-dashboard/dha-search-patient.html";
@@ -1558,8 +1572,8 @@
 
 
 
-    const cdhaProfile = document.getElementById('cdha-profile');
-    const userProfile = document.getElementById('user-profile')
+        const cdhaProfile = document.getElementById('cdha-profile');
+        const userProfile = document.getElementById('user-profile')
 
         const patientLink = document.getElementById('patient-link');
         const patientDropDown = document.getElementById('patient-drop-down');

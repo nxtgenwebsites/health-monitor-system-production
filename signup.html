@@ -68,7 +68,7 @@
                     <!-- Login Form Start -->
                     <form id="login-form" class="login-from" id="login-form">
                         <div class="email my-4">
-                            <input type="email" placeholder="Email" required id="login-email">
+                            <input type="text" placeholder="Email or username" required id="login-email">
                         </div>
                         <div class="password mt-4 position-relative">
                             <input type="password" placeholder="Password" required id="login-password">
@@ -76,7 +76,7 @@
                                 class="text-primary position-absolute hide-pass" alt="">
                         </div>
                         <div class="forget-pass">
-                            <a href="" class="text-decoration-none forgot-password pt-1
+                            <a href="/forgot-password.html" class="text-decoration-none forgot-password pt-1
                 ">Forgot password?</a>
                         </div>
                         <div class="submit-button d-flex justify-content-center align-items-center">
@@ -93,7 +93,7 @@
                             <input type="email" placeholder="Email" id="signup-email" required>
                         </div>
                         <div class="signup-button  text-center mt-4">
-                            <button class="btn primary-btn py-1">Create an account</button>
+                            <button class="btn primary-btn py-1">Proceed</button>
                         </div>
                     </form>
                     <!-- Sigup Form End -->
@@ -103,7 +103,6 @@
     </section>
     <!-- Login End -->
 
-    <!-- Footer start -->
     <!-- Footer start -->
     <footer class="footer-section">
         <div class="container">
@@ -189,7 +188,6 @@
 
     </footer>
     <!-- Footer end -->
-    <!-- Footer end -->
     <script src="js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -210,8 +208,8 @@
                 username: signupUsername,
             }
 
-            localStorage.setItem('email' , signupEmail);
-            localStorage.setItem('username' , signupUsername);
+            localStorage.setItem('email', signupEmail);
+            localStorage.setItem('username', signupUsername);
 
             window.location.href = '/register.html';
 
@@ -230,19 +228,25 @@
             }
 
             axios.post('https://health-monitor-backend.vercel.app/api/login', loginData).then((res) => {
-                toastr.success(`${res.data.message || 'User blocked successfully'}`, "Success", {
-                    "closeButton": true,
-                    "progressBar": true,
-                    "showDuration": "300",
-                    "hideDuration": "1000",
-                    "timeOut": "2000",
-                    "extendedTimeOut": "1000",
-                })
 
                 console.log(res.data);
+                if (res.data.user.isActive === false) {
+                    localStorage.setItem('non-active-email', res.data.user.email);
+                    localStorage.setItem('non-active-id', res.data.user.id);
+                    localStorage.setItem('non-active-username', res.data.user.username);
+                    console.log(localStorage.getItem('un-active-email'));
+                    return location.href = '/nonacticve-user.html';
+                }
+
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('u_id', res.data.user.id);
-                loginForm.reset();
+
+                if (res.data.user.role === 'super admin') {
+                    return location.href = '/admin-dashboard/manage-users.html';
+                } else {
+                    return location.href = '/user-dashboard/overview.html';
+                }
+
 
             }).catch((error) => {
                 console.log(error);
@@ -266,11 +270,6 @@
         const signupHeading = document.getElementById('signup-heading');
 
 
-        window.addEventListener('DOMContentLoaded', () => {
-            signupBtn.click();
-        });
-
-
         signupBtn.addEventListener('click', () => {
             btnSlider.classList.add('slide-left');
             loginBtn.classList.remove('active-btn');
@@ -285,6 +284,9 @@
             loginHeading.classList.remove('show-heading');
             loginForm.reset();
         })
+
+
+        signupBtn.click()
 
         loginBtn.addEventListener('click', () => {
             btnSlider.classList.remove('slide-left');

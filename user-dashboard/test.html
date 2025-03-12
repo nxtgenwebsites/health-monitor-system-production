@@ -225,6 +225,18 @@
     </div>
     <!-- Share Message end -->
     <script>
+            const token = localStorage.getItem('token');
+
+                if (!token) {
+                    document.querySelector('.log-out-btn').style.display = 'none';
+                } else {
+                    document.querySelector('.log-out-btn').addEventListener('click', () => {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('u_id');
+                        location.reload();
+                    });
+                }
+                
         // Share Message
         const shareMsg = document.querySelector('.share-message');
         const crossIcon = document.querySelector('.share-img i');

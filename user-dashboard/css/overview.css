@@ -2098,7 +2098,6 @@ font-size: 14px;
 color: #6B7280;
 }
 
-
 /* Maintain hover effects across screen sizes */
 .monitor-card:hover, .monitor-card.active {
     transform: translateY(-2px);
@@ -2117,4 +2116,8 @@ color: #6B7280;
 
 .card-link-left a{
     cursor: pointer;
+}
+
+.modal-backdrop {
+    display: none !important;
 }

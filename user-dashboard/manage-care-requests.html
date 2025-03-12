@@ -355,7 +355,7 @@
                 <div class="mobile-user-menu">
                     <a href="/user-dashboard/user-profile.html"
                         class="mobile-menu-item d-flex align-items-center gap-2">
-                        <i class="bi bi-person-circle"></i> Profile
+                        <i class="bi bi-person-circle"></i> Profile Settings
                     </a>
                     <a href="/user-dashboard/new-sponsorship.html"
                         class="mobile-menu-item d-flex align-items-center gap-2">
@@ -437,7 +437,7 @@
                 <div class="mobile-user-menu">
                     <a href="/user-dashboard/user-profile.html"
                         class="mobile-menu-item d-flex align-items-center gap-2">
-                        <i class="bi bi-person-circle"></i> Profile
+                        <i class="bi bi-person-circle"></i> Profile Settings
                     </a>
                     <a href="/user-dashboard/new-sponsorship.html"
                         class="mobile-menu-item d-flex align-items-center gap-2">
@@ -981,6 +981,18 @@
     </div>
     <!-- Share Message end -->
     <script>
+            const token = localStorage.getItem('token');
+
+                if (!token) {
+                    document.querySelector('.log-out-btn').style.display = 'none';
+                } else {
+                    document.querySelector('.log-out-btn').addEventListener('click', () => {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('u_id');
+                        location.reload();
+                    });
+                }
+                
         function redirectToPatientSearch(pageURL) {
             localStorage.setItem("redirectAfterPopup", pageURL);
             window.location.href = "/user-dashboard/dha-search-patient.html";

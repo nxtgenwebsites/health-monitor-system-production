@@ -743,9 +743,21 @@
     <script src="js/sidebar.js"></script>
 
     <script>
+        
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+            document.querySelector('.log-out-btn').style.display = 'none';
+        } else {
+            document.querySelector('.log-out-btn').addEventListener('click', () => {
+                localStorage.removeItem('token');
+                localStorage.removeItem('u_id');
+                location.href = '/';
+            });
+        }
+
 
         const u_id = localStorage.getItem('u_id');
-        const token = localStorage.getItem('token');
 
         const headers = {
             id: u_id,

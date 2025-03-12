@@ -2294,3 +2294,29 @@ color: #2E2E2E;
     border-radius: 4px;
     z-index: 1;
 }
+
+.updated-box {
+  max-width: 572px;
+  width: 100%;
+  padding: 40px 30px;
+}
+
+.updated-box h5 {
+  font-size: 23px;
+  color: #00B67B;
+  font-weight: 500;
+}
+
+.dropdown-toggle-kin{
+    /* padding: 5px 7px; */
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: white !important;
+    border-radius: 50%;
+    border: none ;
+    background: #0C75C2;
+}

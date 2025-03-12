@@ -166,7 +166,7 @@
                     <li><a class="dropdown-item py-2 d-flex align-items-center gap-3"
                             href="/user-dashboard/user-profile.html">
                             <i class="bi bi-person-circle text-muted" style="font-size: 20px;"></i>
-                            Profile
+                            Profile Settings
                         </a></li>
                     <li><a class="dropdown-item py-2 d-flex align-items-center gap-3"
                             href="/user-dashboard/new-sponsorship.html">
@@ -231,7 +231,7 @@
                     <li><a class="dropdown-item py-2 d-flex align-items-center gap-3"
                             href="/user-dashboard/user-profile.html">
                             <i class="bi bi-person-circle text-muted" style="font-size: 20px;"></i>
-                            Profile
+                            Profile Settings
                         </a></li>
                     <li><a class="dropdown-item py-2 d-flex align-items-center gap-3"
                             href="/user-dashboard/new-sponsorship.html">
@@ -1005,6 +1005,17 @@
     </div>
     <!-- Share Message end -->
     <script>
+            const token = localStorage.getItem('token');
+
+                if (!token) {
+                    document.querySelector('.log-out-btn').style.display = 'none';
+                } else {
+                    document.querySelector('.log-out-btn').addEventListener('click', () => {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('u_id');
+                        location.reload();
+                    });
+                }
         function redirectToPatientSearch(pageURL) {
             localStorage.setItem("redirectAfterPopup", pageURL);
             window.location.href = "/user-dashboard/dha-search-patient.html";
