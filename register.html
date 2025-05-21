@@ -274,7 +274,7 @@
                     password: document.getElementById('user-password').value,
                 };
 
-                axios.post('http://localhost:3000/api/sign_up', data).then((res) => {
+                axios.post('https://health-monitor-backend.vercel.app/api/sign_up', data).then((res) => {
                     console.log(res.data);
 
                     emailData.email = res.data.user.email
@@ -301,7 +301,7 @@
             })
 
             const sendEmail = () => {
-                axios.post('http://localhost:3000/api/email_verification', emailData).then((res) => {
+                axios.post('https://health-monitor-backend.vercel.app/email_verification', emailData).then((res) => {
                     console.log(res.data);
                     localStorage.removeItem('email');
                 }).catch((error) => {
