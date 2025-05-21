@@ -1070,11 +1070,6 @@ a {
 
   /* Make buttons stack on very small screens */
   @media (max-width: 400px) {
-    .d-flex.gap-3 {
-      flex-direction: column;
-      gap: 8px !important;
-    }
-
     .btn {
       width: 100%;
     }
@@ -1513,4 +1508,18 @@ position: relative;
   background: linear-gradient(90deg, #0c75c2 0%, #1ecee4 100%);
     color:white;
     border: 2px solid transparent;
+}
+
+@media (max-width: 992px) {
+  .logo {
+    width: 100px !important;
+    height: 80px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .primary-btn {
+    padding: 3px 14px !important;
+    font-size: 14px;
+  }
 }

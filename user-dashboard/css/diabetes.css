@@ -1297,9 +1297,13 @@ transition: background-color 0.3s ease;
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 18px;
         margin-bottom: 12px;
     }
+  
+.filter-btn {
+  width: 110px !important;
+}
 
     .patient-info {
         font-size: 14px;
@@ -1351,6 +1355,17 @@ transition: background-color 0.3s ease;
         width: 100%;
         text-align: center;
     }
+}
+
+@media (max-width: 992px) {
+  .time-filter {
+    padding: 0;
+  }
+  .calender-btn button {
+    /* margin-top: 5px; */
+    padding: 4px 8px;
+    border: 2px solid #bfbfbf !important;
+  }
 }
 
 /* History section styles */
@@ -1535,6 +1550,7 @@ transition: background-color 0.3s ease;
 .modal .form-label {
     color: #374151;
     margin-bottom: 0;
+      width: 35% !important;
 }
 
 .custom-input {
@@ -1841,3 +1857,487 @@ color: white;
   .sidebar-icon {
       width: 35px !important;
   }
+
+
+
+.swiper {
+  width: 700px;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.threshold-history-container {
+  padding: 50px 40px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnail-card {
+  box-shadow: 0 4px 10px #00000026;
+  width: 380px;
+  padding: 20px;
+  text-align: left !important;
+  height: 100%;
+  border-radius: 10px !important;
+}
+
+.thumbnail-card .card-top h3 {
+  background: #ddf2f9;
+  padding: 7px 15px;
+  border: 1px solid #0c74c2;
+  border-radius: 6px;
+  color: #0c74c2;
+  font-size: 18px;
+}
+
+.thumbnail-card .card-top a {
+  color: #ed4c5c !important;
+  cursor: pointer;
+}
+
+.thumbnail-card .card-top a:hover {
+  text-decoration: underline;
+}
+
+.thumbnail-card .card-text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.threshold-action-btns button {
+  width: 37px;
+  height: 37px;
+  background: #ddf2f9;
+  border: none !important;
+  border-radius: 5px;
+}
+
+.threshold-history-heading h5 {
+  color: #0c74c2;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.threshold-history-heading a {
+  color: #ed4c5c !important;
+  cursor: pointer;
+}
+
+.threshold-history-heading a:hover {
+  text-decoration: underline !important;
+}
+
+.swiper-button-next::after {
+  content: "";
+}
+.swiper-button-prev::after {
+  content: "";
+}
+
+.swiper-button-next {
+  width: 25px;
+  height: 25px;
+  right: 30px;
+  background-image: url("../assets/right.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-button-prev {
+  width: 25px;
+  height: 25px;
+  left: 30px;
+  background-image: url("../assets/left.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background-color: #ddf2f9; /* Default bullet color */
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #0959a3; /* Active bullet color */
+  opacity: 1;
+}
+
+.delete-box {
+  max-width: 572px;
+  padding: 40px 30px;
+  z-index: 1000 !important;
+}
+
+.delete-box p {
+  margin-top: 10px;
+}
+
+.delete-box h5 {
+  font-size: 25px;
+  color: #ed4c5c;
+  font-weight: 500;
+}
+
+.history-section {
+  margin-top: 48px;
+  background-color: white;
+  padding: 15px;
+  padding-top: 25px;
+  border-radius: 20px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.history-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1e293b;
+  color: var(--Font, #2e2e2e);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+
+  @media (max-width: 576px) {
+    .chart-container {
+        width: auto !important;
+    }
+  #cholesterolChart{
+    width: 350px !important;
+    height: 200px  !important;
+  }
+
+}
+
+@media (max-width: 425px) {
+  #cholesterolChart{
+    width: 300px !important;
+    height: 170px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+.history-table-container{
+    width: 100%;
+    overflow-x: scroll !important;
+     -webkit-overflow-scrolling: touch;
+}
+}
+@media (max-width: 350px) {
+  #cholesterolChart{
+    width: 290px !important;
+    height: 160px !important;
+  }
+}
+
+.history-table-container{
+    width: 100%;
+}
+.history-table{
+    width: 750px !important;
+}
+
+
+.filter-btn {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #8a92a6;
+  background: white;
+  color: #8a92a6;
+  outline: none !important;
+  border-radius: 6px;
+  padding: 5px 15px;
+}
+
+.calender-btn button {
+  padding: 5px 10px;
+  border: 2px solid #bfbfbf !important;
+}
+
+/* Calendar Popup */
+.calendar {
+  width: 26rem; /* Further reduced */
+  height: 300px; /* Further reduced */
+  padding: 10px 0;
+  background-color: white;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.month {
+  width: 100%;
+  height: 60px; /* Further reduced */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  text-align: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.075);
+}
+
+.month i {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.month h1 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+  margin-bottom: 0.5rem;
+}
+
+.month p {
+  font-size: 0.6rem;
+  margin-top: -5px;
+}
+
+.weekdays {
+  width: 100%;
+  height: 60px; /* Further reduced */
+  font-size: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.weekdays div {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.06rem;
+  width: calc(25rem / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.1rem;
+}
+
+.days div {
+  font-size: 16px; /* Kept at 16px */
+  margin: 0.15rem;
+  width: calc(23rem / 7);
+  height: 30px; /* Further reduced */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.days div:hover:not(.today) {
+  background-color: #e2e1e1;
+  cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+  opacity: 0.5;
+}
+
+.today {
+  background-color: #319bff;
+  color: white;
+}
+
+.calender-popup-btns button {
+  padding: 2px 5px !important;
+}
+
+.calender-popup-btns button:nth-child(1) {
+  padding: 2px 8px !important;
+  background: #f5f7fa;
+  border: none !important;
+  border-radius: 4px;
+}
+
+.calender-popup-btns button:nth-child(2) {
+  padding: 2px 8px !important;
+  background: #004ea2;
+  color: white;
+  border: none !important;
+  border-radius: 4px;
+}
+
+.calender-btn button {
+  padding: 2px 5px;
+  border: 2px solid #bfbfbf !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calendar {
+    width: 20rem;
+    height: 250px;
+    padding: 8px 0;
+  }
+  .month {
+    height: 50px;
+    padding: 0 0.8rem;
+  }
+  .month h1 {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+  .weekdays {
+    height: 50px;
+  }
+  .weekdays div {
+    font-size: 0.5rem;
+    width: calc(19rem / 7);
+  }
+  .days div {
+    font-size: 14px;
+    width: calc(18rem / 7);
+    height: 25px;
+  }
+  .calender-popup-btns button {
+    padding: 2px 6px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar {
+    width: 16rem;
+    height: 250px;
+    padding: 6px 0;
+  }
+  .month {
+    height: 45px;
+    padding: 0 0.6rem;
+  }
+  .month h1 {
+    font-size: 0.9rem;
+    letter-spacing: 0.08rem;
+  }
+  .weekdays {
+    height: 45px;
+  }
+  .weekdays div {
+    font-size: 0.4rem;
+    width: calc(15rem / 7);
+  }
+  .days div {
+    font-size: 12px;
+    width: calc(14rem / 7);
+    height: 22px;
+  }
+  .calender-popup-btns button {
+    padding: 2px 4px !important;
+  }
+}
+
+@media (max-width: 670px) {
+  .swiper {
+    width: 400px;
+    height: 550px;
+  }
+
+  .swiper-button-next {
+    display: none;
+  }
+  .swiper-button-prev {
+    display: none;
+  }
+
+  .thumbnail-card {
+    width: 320px;
+  }
+  .thumbnail-card .card-text {
+    font-size: 15px;
+  }
+  .thumbnail-card span {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .history-title {
+    font-size: 14px;
+  }
+  .swiper {
+    width: 360px;
+    height: 550px;
+  }
+  .thumbnail-card {
+    width: 290px;
+  }
+  .thumbnail-card .card-text {
+    font-size: 14px;
+  }
+  .thumbnail-card span {
+    font-size: 14px;
+  }
+  .thumbnail-card .threshold-copy-btn {
+    display: none !important;
+  }
+}
+
+.add-threshold-btn i{
+  color: #0b6fc0;
+}
+  .filter-group {
+  display: flex;
+  justify-content: end;
+  margin: 10px 0;
+  align-items: center;
+  gap: 16px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.filter-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.filter-dot.weight {
+  background: #9333ea;
+}
+
+.filter-dot.height {
+  background: #ec4899;
+}
+
+.filter-dot.bmi {
+  background: #3b82f6;
+}
+
+
+.add-value-popup{
+  width: 100% !important;
+  max-width: 600px !important;
+}
+
+@media (max-width: 500px) {
+  .add-value-popup{
+    width: auto !important;
+    max-width: 600px !important;
+  }
+}

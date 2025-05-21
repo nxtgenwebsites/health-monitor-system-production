@@ -1005,12 +1005,19 @@ a {
 /* Kin Card */
 .kin-card {
     padding: 24px;
-    height: 229px;
+    height: 90% !important;
     border-radius: 10px;
     background: #fff;
 }
 
+.notes-card {
+    padding: 24px;
+    height: 90% !important;
+    border-radius: 10px;
+    background: #fff;
+}
 .kin-heading {
+
     color: #0C74C2;
 }
 
@@ -1103,12 +1110,12 @@ a {
     .kin-card {
         padding: 24px;
         width: 100% !important;
-        height: auto !important;
+        height: 100% !important;
         border-radius: 10px;
         background: #fff;
     }
-
     .kin-heading {
+
         color: #0C74C2;
     }
 
@@ -1245,7 +1252,7 @@ a {
     }
 
     .sidebar-icon {
-        width: 37px !important;
+        width: 38px !important;
         height: 30px !important;
         margin-right: 12px;
         flex-shrink: 0;
@@ -1291,10 +1298,50 @@ a {
     }
 
     .sidebar-icon {
-        width: 35px !important;
+        width: 38px !important;
     }
 
     .notes-text {
         font-size: 14px !important;
         margin-top: 5px;
+    }
+
+    @media (max-width: 500px) {
+         small{
+            font-size: 12px;
+        }
+        .notes p{
+            text-align: left !important;
+        }
+        .notes-content .notes-text{
+            /* display: none; */
+            text-align: left !important;
+        }
+        .other-details-content{
+            /* display: none; */
+            text-align: left !important;
+        }
+    }
+    .kin-heading h4{
+
+        font-size: 16px !important;
+    }
+    .notes-content a{
+        font-size: 16px !important;
+        font-weight: 500 !important;
+    }
+    .children-content h4{
+        font-size: 16px !important;
+    }
+    .residential-content h4{
+        font-size: 16px !important;
+    }
+    
+    .notes-content h4{
+        font-size: 16px !important;
+    }
+    
+    .other-details-content h6 {
+        font-size: 16px !important;
+        font-weight: 500 !important;
     }

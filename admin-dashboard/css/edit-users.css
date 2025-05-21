@@ -1926,3 +1926,7 @@ textarea.form-control {
 .password-container button:hover{
   text-decoration: underline;
 }
+
+#apply-button{
+  display: none;
+}

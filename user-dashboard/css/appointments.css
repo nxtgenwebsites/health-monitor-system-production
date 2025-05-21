@@ -1870,11 +1870,19 @@ a {
 
 @media (max-width: 640px) {
   .appointment-details-modal .modal-content {
+    padding-top: 60px;
     width: 90%;
     height: auto;
     max-height: 90vh;
     margin: 20px;
   }
+  .header-actions {
+    top: -50px !important;
+  }
+  .appointment-details-modal .modal-content {
+    height: 750px !important;
+  }
+
 
   .grid-row {
     grid-template-columns: 1fr;
@@ -2033,4 +2041,61 @@ a {
 .share-dropdown-item:hover {
   background: #f1f8fe;
   color: #0c75c2;
+}
+
+@media (max-width: 768px) {
+  .appointment-card {
+    text-align: center;
+  }
+
+  .doctor-info img {
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .status-badge {
+    margin: auto;
+  }
+}
+
+.status-dropdown-container {
+  width: fit-content;
+  border-radius: 10px !important;
+  background: linear-gradient(90deg, #0c75c2 0%, #1ecee4 100%);
+}
+
+.status-dropdown-container select {
+  border: none;
+  outline: none;
+  border-right: 5px solid #00000000 !important;
+  border-radius: 10px !important;
+  padding: 7px 15px;
+  background: transparent;
+  color: white;
+}
+.status-dropdown-container option {
+  background: white;
+}
+
+.appointment-details-modal .modal-content {
+  height: 536px;
+}
+
+.appointment-close-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ddf2f9;
+  border-radius: 6px;
+  color: #0284c7;
+  border: none;
+}
+
+.appointment-disable-row {
+  background: rgb(211, 211, 211) !important;
+  opacity: 70% !important;
 }

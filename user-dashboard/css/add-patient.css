@@ -1314,7 +1314,7 @@ color: #2E2E2E;
 
 /* Sidebar Icons */
 .sidebar-icon {
-    width: 30px !important;
+    width: 38px !important;
     height: 30px !important;
     margin-right: 12px;
     flex-shrink: 0;
@@ -2295,28 +2295,32 @@ color: #2E2E2E;
     z-index: 1;
 }
 
-.updated-box {
-  max-width: 572px;
-  width: 100%;
-  padding: 40px 30px;
+
+ .upload-box {
+  background: #ffffff;
+  transition: background-color 0.2s;
 }
 
-.updated-box h5 {
-  font-size: 23px;
-  color: #00B67B;
-  font-weight: 500;
-}
+.upload-box span{
+     color: #8B8D97 !important;
+     font-size: 20px !important;
+    }
 
-.dropdown-toggle-kin{
-    /* padding: 5px 7px; */
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    color: white !important;
-    border-radius: 50%;
-    border: none ;
-    background: #0C75C2;
+.upload-box i{
+     color: #8B8D97 !important;
+     font-size: 20px !important;
+    }
+    
+    .upload-label {
+     font-size: 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-radius: 10px;
+  padding: 25px;
+  border: 2px solid #0B6FC0;
+  margin: 0;
+  cursor: pointer;
+  color: #8B8D97 !important;
 }

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Health Monitor</title>
-    <link rel="shortcut icon" href="assets/icons/logo.svg" type="image/x-icon" />
+    <title>HealthCentreApp</title>
+    <link rel="shortcut icon" href="assets/images/logo loading screen.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/swiper.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css">
@@ -15,36 +15,44 @@
 
 <body>
     <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <a class="navbar-brand" href="/">
-            <img src="assets/images/logo.png" width="145" class="img-fluid" alt="logo">
-        </a>
-        <div class="mx-3 trustpilot">
-            <img src="assets/images/trustpilot.png" class="img-fluid" alt="logo">
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav align-items-lg-center ms-auto mb-2 mb-lg-0 mt-lg-0 mt-4">
-                <li class="nav-item">
-                    <a class="nav-link mx-2 text-primary" href="emergency.html">Emergency</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-2 text-primary" href="community.html">Community</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-2 text-primary" href="signup.html">Register</a>
-                </li>
-            </ul>
-            <div class="login-btn">
-                <a href="login.html"><button class="btn primary-btn">Login</button></a>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div>
+                <a class="navbar-brand" href="/">
+                    <img src="assets/images/logo.png" width="145" class="img-fluid" alt="logo">
+                </a>
+                <dv class="mx-3 trustpilot">
+                    <img src="assets/images/trustpilot.png" class="img-fluid" alt="logo">
+                </dv>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul
+                    class="navbar-nav align-items-lg-center justify-content-lg-center flex-lg-grow-1 mb-2 mb-lg-0 mt-lg-0 mt-4">
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 text-primary" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 text-primary" href="about-us.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 text-primary" href="emergency.html">Emergency</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 text-primary" href="contact-us.html">Contact us</a>
+                    </li>
+                </ul>
+                <a href="login.html">
+                    <button class="btn primary-btn" type="button">
+                        Login
+                    </button>
+                </a>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
     <!-- Navbar End -->
 
     <!-- Community Start -->
@@ -53,25 +61,25 @@
             <div class="row align-items-center row-gap-4">
                 <div class="col-12 col-md-6 mx-auto px-3">
                     <div class="community-content text-center">
-                        <h2 class="">Welcome to HealthMonitor</h2>
+                        <h2 class="">Welcome to HealthCentreApp</h2>
                         <h1 class="mt-2">Communities</h1>
                         <p>We're thrilled to have you here. This is your go-to hub for everything related to health and
                             wellness. Whether you're
                             seeking tech support, reading reviews, lodging complaints, or looking for information about
                             hospitals, pharmacies,
-                            chemists, and CDHA training, you've come to the right place.</p>
+                            chemists, and Certified Digital Health Analysts (CdHP) training, you've come to the right place.</p>
                         <p>Our community is dedicated to providing you with the best resources and support. Feel free to
                             explore, ask questions,
                             and share your experiences. Together, we can make health and wellness accessible to
                             everyone.</p>
-                        <p>If you're looking for a Community Digital Health Assistant (CDHA) or want to train as a CDHA,
+                        <p>If you're looking for a Community Digital Health Assistant (CdHP) or want to train as a Certified Digital Health Analysts (CdHP),
                             you've come to the right
                             place. We offer comprehensive information and resources to help you on your journey.</p>
                         <p>Warm regards</p>
-                        <p>The Health Monitor Team</p>
+                        <p>The HealthCentreApp Team</p>
                     </div>
                 </div>
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-5 community-img">
                     <img src="assets/images/community img.svg" class="img-fluid" alt="img">
                 </div>
             </div>
@@ -90,19 +98,19 @@
                     <h3>Care Providers</h3>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-4 community-card-container">
                         <div class="community-card">
-                            <h5>Hospitals:</h5>
+                            <h5>Hospital & Health Centres:</h5>
                             <p>Find top-rated hospitals for all your medical needs and emergencies.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-4 community-card-container">
                         <div class="community-card">
                             <h5>Pharmacies:</h5>
                             <p>Locate nearby pharmacies for prescriptions, over-the-counter meds, and health advice,</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-4 community-card-container">
                         <div class="community-card">
                             <h5>Chemists:</h5>
                             <p>Discover trusted chemists for your pharmaceutical and healthcare products.</p>
@@ -112,23 +120,23 @@
             </div>
             <div class="mt-5">
                 <div class="community-sub-heading">
-                    <h3>Community Digital Health Assistants
-                        (CDHA)</h3>
+                    <h3> 
+                        Certified Digital Health (CDH) Associates</h3>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-4 community-card-container">
                         <div class="community-card">
-                            <h5>Find CDHA:</h5>
-                            <p>Search for Community Digital Health Assistants in your area.</p>
+                            <h5>Find Certified Digital Health Analysts (CdHP):</h5>
+                            <p>Search for Certified Digital Health Practitioner in your area.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-4 community-card-container">
                         <div class="community-card">
-                            <h5>CDHA Training:</h5>
+                            <h5>Certified Digital Health Analysts (CdHP) Training:</h5>
                             <p>Learn how to become a certified Community Digital Health Assistant.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-4 community-card-container">
                         <div class="community-card">
                             <h5>Tech Support:</h5>
                             <p>Get help with technical issues and healthcare technology</p>
@@ -141,25 +149,25 @@
                     <h3>Feedback & Policies</h3>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-3 community-card-container">
                         <div class="community-card">
                             <h5>Complaints:</h5>
                             <p>Lodge complaints and get support for resolving healthcare issues.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-3 community-card-container">
                         <div class="community-card">
                             <h5>Privacy Policy:</h5>
                             <p>Understand how we protect your personal information and data.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-3 community-card-container">
                         <div class="community-card">
                             <h5>Reviews:</h5>
                             <p>Read and write reviews about healthcare services and providers.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-3 community-card-container">
                         <div class="community-card">
                             <h5>Terms & Conditions:</h5>
                             <p>Review the terms and conditions for using our services.</p>
@@ -187,7 +195,7 @@
                             <img src="assets/icons/community offers icon 1.svg" width="30px" alt="monitor" />
                         </div>
                         <div class="services-content">
-                            <h3>Find CDHA</h3>
+                            <h3>Find Certified Digital Health Associates</h3>
                             <p>
                                 Locate the nearest DHA (Designated Health
                                 Authority) with ease. Get access to key
@@ -202,7 +210,7 @@
                             <img src="assets/icons/community offers icon 2.svg" alt="monitor" />
                         </div>
                         <div class="services-content">
-                            <h3>Find CDHA Training</h3>
+                            <h3>Find Certified Digital Health Associates Training</h3>
                             <p>
                                 Discover training programs offered by DHAs.
                                 Stay updated with the latest training schedules.
@@ -428,7 +436,7 @@
                     <div class="footer-card">
                         <div class="footer-img">
                             <a href="">
-                                <img src="assets/images/logo.png" width="150" alt="" class="img-fluid">
+                                <img src="assets/images/logo.png" width="170" alt="" class="img-fluid">
                             </a>
                         </div>
                         <div class="footer-content">
@@ -457,8 +465,7 @@
                         <li class="nav-item"><a href="/user-dashboard/hospitals.html" class="nav-link">Hospitals</a>
                         </li>
                         <li class="nav-item"><a href="#" class="nav-link">Pharmacies</a></li>
-                        <li class="nav-item"><a href="/user-dashboard/Chemists.html" class="nav-link">Community Digital
-                                Health Assistants</a></li>
+                        <li class="nav-item"><a href="/user-dashboard/Chemists.html" class="nav-link">Certified Digital Health Practitioner</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Tech Support</a></li>
                         <li class="nav-item"><a href="/user-dashboard/complaints.html" class="nav-link">Complaints</a>
                         </li>
@@ -483,7 +490,7 @@
         </div>
         <hr class="mt-5 mb-2">
         <div class="copyright-section d-flex align-items-center">
-            <p class="font-size">© Copyright 2025 HealthMonitor. All rights reserved</p>
+                    <p class="font-size">© Copyright 2025 HealthCentreApp. All rights reserved </p>
             <p class="ms-md-auto me-3 font-size">Share on socials</p>
             <div class="social-media">
                 <button id="x-share-btn" class="btn p-0 border-0">
@@ -601,26 +608,21 @@
     <!-- Forum Popup End -->
     <!-- Javascript -->
     <script>
-           const token = localStorage.getItem('token');
-
-            if (token) {
-                document.querySelector('.login-btn').style.display = 'none';
-            }
         document.getElementById('linkedin-share-btn').addEventListener(('click'), () => {
             const shareUrl = "https://www.linkedin.com/sharing/share-offsite";
 
             const params = new URLSearchParams({
                 url: "https://health-monitor-sa.vercel.app/",
-                title: "Health Monitor",
+                title: "HealthCentreApp",
                 summary: "A smarter way to track and manage your health with our intuitive dashboard. Gain complete control over your well-being, all in one place", // Summary text
-                source: "Health Monitor"
+                source: "HealthCentreApp"
             }).toString();
 
             window.open(`${shareUrl}?${params}`, "_blank", "width=600,height=400");
         })
 
         document.getElementById('x-share-btn').addEventListener(('click'), () => {
-            const tweetText = encodeURIComponent("A smarter way to track and manage your health with our intuitive dashboard. Gain complete control over your well-being, all in one place: https://health-monitor-sa.vercel.app/ #healthMonitor");
+            const tweetText = encodeURIComponent("A smarter way to track and manage your health with our intuitive dashboard. Gain complete control over your well-being, all in one place: https://health-monitor-sa.vercel.app/ #HealthCentreApp");
             const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
             window.open(tweetUrl, "_blank", "width=600,height=400");
         })
@@ -630,7 +632,7 @@
             const params = new URLSearchParams({
                 u: "https://health-monitor-sa.vercel.app/", // Your website URL
                 quote: "A smarter way to track and manage your health with our intuitive dashboard. Gain complete control over your well-being, all in one place", // Text to share
-                hashtag: "#healthMonitor", // Optional hashtag
+                hashtag: "#HealthCentreApp", // Optional hashtag
             }).toString();
 
             const shareUrl = `${fbShareUrl}?${params}`;

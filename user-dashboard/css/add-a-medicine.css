@@ -767,6 +767,18 @@ textarea.form-control {
 }
 
 /* Responsive Styles */
+@media (max-width: 768px) {
+  .btn-primary {
+  width: auto !important;
+}
+.btn-preview,
+.btn-outline-secondary,
+.btn-primary {
+  width: auto !important;
+  padding: 8px 20px !important;
+
+}
+}
 @media (max-width: 991px) {
   .header {
     height: 70px;
@@ -1817,4 +1829,34 @@ textarea.form-control {
 
 #previewModal {
   background: rgba(0, 0, 0, 0.5);
+}
+
+.form-check-input {
+  margin: 0 9px ;
+}
+
+@media (max-width : 500px) {
+  .timing-chk label{
+    font-size: 14px;
+  }
+  .timing-chk p{
+    font-size: 14px;
+  }
+
+  .chk-container {
+    gap: 10px !important;
+  }
+  .form-check-input{
+    width: 15px;
+   height:  15px;
+   margin: 0 5px;
+   margin-bottom: 0px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .primary-btn {
+    padding: 6px 20px !important;
+    font-size: 14px !important;
+  }
 }

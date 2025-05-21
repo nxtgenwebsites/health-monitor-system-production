@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Health Monitor</title>
-    <link rel="shortcut icon" href="assets/icons/logo.svg" type="image/x-icon" />
+    <title>HealthCentreApp</title>
+    <link rel="shortcut icon" href="assets/images/logo loading screen.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/swiper.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -14,10 +14,10 @@
 
 <body>
     <!-- loading Start -->
-    <div class="loading-screen d-none fixed-top h-100 w-100">
+    <div class="loading-screen fixed-top h-100 w-100 ">
         <div class="container d-flex flex-column gap-5">
             <div class="text-center">
-                <img src="assets/images/logo.png" class="img-fluid loading-logo" alt="logo_img" />
+                <img src="assets/images/logo loading screen.png" class="img-fluid loading-logo" alt="logo_img" />
             </div>
             <div class="d-flex flex-column align-items-center">
                 <button class="btn mouse-btn border-0">
@@ -29,38 +29,73 @@
     </div>
     <!-- loading End -->
 
-    <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <a class="navbar-brand" href="/">
-            <img src="assets/images/logo.png" width="145" class="img-fluid" alt="logo">
-        </a>
-        <div class="mx-3 trustpilot">
-            <img src="assets/images/trustpilot.png" class="img-fluid" alt="logo">
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav align-items-lg-center ms-auto mb-2 mb-lg-0 mt-lg-0 mt-4">
-                <li class="nav-item">
-                    <a class="nav-link mx-2 text-primary" href="emergency.html">Emergency</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-2 text-primary" href="community.html">Community</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mx-2 text-primary" href="signup.html">Register</a>
-                </li>
-            </ul>
-            <div class="login-btn">
-                <a href="login.html"><button class="btn primary-btn">Login</button></a>
+    <!-- Cookies Banner For PC  -->
+    <div class="cookies-banner" id="cookiesBanner">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-8">
+                    <p class="mb-0">By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to
+                        enhance site navigation, analyze
+                        site usage, and assist in our marketing efforts.</p>
+                </div>
+                <div class="col-md-4 d-flex gap-4 justify-content-end align-items-center">
+                    <button onclick="acceptCookies()">Accept</button>
+                    <button onclick="showSettings()">Cookies Settings</button>
+                </div>
             </div>
         </div>
     </div>
-</nav>
+    <!-- Cookies Popup For Mobile  -->
+    <div class="cookies-overlay" id="cookiesOverlay">
+        <div class="cookies-popup">
+            <p>By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to
+            enhance site navigation, analyze
+            site usage, and assist in our marketing efforts.</p>
+            <button class="allow-btn" onclick="acceptCookies()">Allow</button>
+            <button class="decline-btn" onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
 
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <div>
+                <a class="navbar-brand" href="/">
+                    <img src="assets/images/logo.png" width="145" class="img-fluid" alt="logo">
+                </a>
+                <dv class="mx-3 trustpilot">
+                    <img src="assets/images/trustpilot.png" class="img-fluid" alt="logo">
+                </dv>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul
+                    class="navbar-nav align-items-lg-center justify-content-lg-center flex-lg-grow-1 mb-2 mb-lg-0 mt-lg-0 mt-4">
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 text-primary" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 text-primary" href="about-us.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 text-primary" href="emergency.html">Emergency</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 text-primary" href="contact-us.html">Contact us</a>
+                    </li>
+                </ul>
+                    <a href="login.html">
+                        <button class="btn primary-btn" type="button">
+                            Login
+                        </button>
+                    </a>
+            </div>
+        </div>
+    </nav>
     <!-- Navbar End -->
 
     <!-- Hero Start -->
@@ -68,14 +103,25 @@
         <div class="container">
             <div class="row d-flex align-items-center gap-5 gap-lg-0">
                 <div class="col-12 col-lg-6 hero-content">
-                    <h3>Monitor Your Wellbeing</h3>
+                    <h3>
+                        <b>
+                            Monitor Your Health
+                        </b>
+                    </h3>
                     <h1>Enjoy Your Life</h1>
                     <p>
-                        A smarter way to track and manage your health with our intuitive
-                        dashboard. Gain complete control over your well-being, all in one
-                        place
+                        Your all-in-one solution for seamless <b>health tracking and management.</b>  Whether you manage it yourself or get our expert
+                        support, stay 
+                        <b>
+                            connected, informed, and empowered
+                        </b>
+                         - anytime, anywhere.
+                         <b>
+                             Available in free and premium editions.
+                         </b>
                     </p>
-                    <div class="d-flex g-3 align-items-center justify-content-center justify-content-lg-start">
+                    <div
+                        class="btn-container d-flex g-3 align-items-center justify-content-center justify-content-lg-start">
                         <a href="login.html"><button class="btn primary-btn">Get Started Now</button></a>
                         <button class="btn border-0 demo-btn" id="demo-btn">
                             <img src="assets/icons/play icon.svg" alt="play icon" />
@@ -98,35 +144,69 @@
                 <div class="col-12 col-lg-6">
                     <div class="about-content">
                         <h1>Why Choose
-                            HealthMonitor?</h1>
-                        <p class="about-text">With Health Monitor, you can take control of your health journey, receive
-                            timely alerts, and access essential health
-                            information, ensuring you and your loved ones stay informed and cared for, no matter where
-                            you are. Choose Health
-                            Monitor for a smarter, more connected approach to healthcare.</p>
+                            HealthCentreApp?</h1>
+                        <p class="about-text">HealthCentreApp provides 
+                            <b>
+                                seamless access
+                            </b>
+                             to personal health records, 
+                             <b>
+                                 instant emergency support
+                             </b>
+                              and
+                              <b>
+                                  AI-powered symptom checking 
+                              </b>
+                       for informed healthcare decisions. Users can 
+                       <b>
+                           monitor health events, 
+                       </b>
+                       set 
+                       <b>
+                           remote care thresholds and alerts,
+                        </b>
+                        and
+                        connect with 
+                        <b>
+                            global consultants
+                        </b>
+                         for expert guidance. Meanwhile, 
+                         <b>
+                             Certified Digital Health Practitioners (CdHPs)
+                         </b>
+                          support
+                        individuals with 
+                        <b>
+                            limited digital access,
+                        </b>
+                         ensuring equitable, 
+                         <b>
+                             inclusive healthcare
+                         </b>
+                          for all citizens.</p>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="row row-gap-3 about-card-container">
-                        <div class="col-6 ">
+                        <div class="col-12 col-sm-6">
                             <div class="numbers-card">
-                            <h3 class="text-primary" id="members">5000</h3>
-                            <p>Members</p>
+                                <h3 class="text-primary" id="members">5000</h3>
+                                <p>Members</p>
                             </div>
                         </div>
-                        <div class="col-6 ">
+                        <div class="col-12 col-sm-6">
                             <div class="numbers-card">
-                            <h3 class="text-primary" id="dha-courses">100+</h3>
-                            <p>CDHA Courses</p>
+                                <h3 class="text-primary" id="dha-courses">100+</h3>
+                                <p>Certified Digital Health Practitioners (CdHP)</p>
                             </div>
                         </div>
-                        <div class="col-6 ">
+                        <div class="col-12 col-sm-6">
                             <div class="numbers-card">
-                            <h3 class="text-primary" id="hospitals-registered">1000</h3>
-                            <p>Hospitals Registered</p>
+                                <h3 class="text-primary" id="hospitals-registered">1000</h3>
+                                <p>Hospitals Registered</p>
                             </div>
                         </div>
-                        <div class="col-6 ">
+                        <div class="col-12 col-sm-6">
                             <div class="numbers-card">
                                 <h3 class="text-primary" id="hospitals-registered2">5000</h3>
                                 <p class="text-nowrap">Pharmacies Registered</p>
@@ -219,14 +299,25 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="services-card p-4 h-100">
                         <div class="service-img mb-3">
+                            <img src="assets/images/smartphone-call.png" width="30" alt="monitor" />
+                        </div>
+                        <div class="services-content">
+                            <h3>Personal Mobile Health Records</h3>
+                            <p>
+                                Securely capture, store, and access patient data in real-time for informed healthcare decisions at the point of care.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="services-card p-4 h-100">
+                        <div class="service-img mb-3">
                             <img src="assets/icons/emergency icon.svg" width="30" alt="monitor" />
                         </div>
                         <div class="services-content">
-                            <h3>Emergency Support</h3>
+                            <h3>Accident & Emergency</h3>
                             <p>
-                                Our app uses advanced GPS technology to locate healthcare providers near you, no matter
-                                where you are. This feature is
-                                especially crucial during emergencies when every second counts.
+                                GPS identifies nearby healthcare providers for rapid care
                             </p>
                         </div>
                     </div>
@@ -239,9 +330,7 @@
                         <div class="services-content">
                             <h3>Symptoms & Triage</h3>
                             <p>
-                            Engage privately with our AI-powered CareRequest, Summarizer, or Diagnoser to gain insights into the cause of your
-                            symptoms and explore potential treatment options. You can share the generated report with healthcare professionals for
-                            second opinions and added peace of mind.
+                                Create private symptom reports, share with caregivers globally.
                             </p>
                         </div>
                     </div>
@@ -252,13 +341,9 @@
                             <img src="assets/icons/monitor icon.svg" alt="monitor" />
                         </div>
                         <div class="services-content">
-                            <h3>Health Monitoring</h3>
+                            <h3>Monitor Health</h3>
                             <p>
-                                We provide several tools for capturing, analysing, and monitoring health data, including
-                                blood pressure, diabetes,
-                                weight, temperature, episodes, and other tests. This includes setting up thresholds that
-                                will automatically send
-                                messages to healthcare providers and family members.
+                                Automatically track data and sends alerts for family and caregivers.
                             </p>
                         </div>
                     </div>
@@ -269,14 +354,9 @@
                             <img src="assets/icons/cdha icon.svg" width="45" alt="monitor" />
                         </div>
                         <div class="services-content ">
-                            <h3>Supporting Citizens with <br /> low Digital Literacy</h3>
+                            <h3>Trained Certified Digital Health Practitioner (CdHP)</h3>
                             <p>
-                                We provide comprehensive training for Community Digital Health Assistants (CDHA) to
-                                enable them to offer citizens, who
-                                may not own or know how to use smartphones, the opportunity to benefit from our App
-                                using the Community Edition of the
-                                app, thereby promoting health equality."
-
+                                Supports citizens with low digital literacy and no smartphones.
                             </p>
                         </div>
                     </div>
@@ -287,11 +367,9 @@
                             <img src="assets/icons/medicine.svg" width="35" alt="monitor" />
                         </div>
                         <div class="services-content">
-                            <h3>Medication Administration</h3>
+                            <h3>Medication</h3>
                             <p>
-                                Sets the correct dose, frequency, and reminders for medications. Provides reports on
-                                missed doses, ensuring you stay on
-                                track with your treatment plan and receive timely alerts.
+                                Manages dosage, reminders, missed doses, and timely alerts.
                             </p>
                         </div>
                     </div>
@@ -302,14 +380,9 @@
                             <img src="assets/icons/remote care icon.svg" width="25" alt="monitor" />
                         </div>
                         <div class="services-content">
-                            <h3>Remote Care Monitoring</h3>
+                            <h3>Remote Care</h3>
                             <p>
-                                Provides automatic alerts to carers and relatives about the health status of their loved
-                                ones. This system ensures
-                                timely notifications and offers the option to facilitate support when needed, enhancing
-                                the overall care experience and
-                                ensuring peace of mind for families.
-
+                                Sends health alerts to caregivers and family, improving support and peace of mind.
                             </p>
                         </div>
                     </div>
@@ -320,11 +393,9 @@
                             <img src="assets/icons/calendar.svg" width="35" alt="monitor" />
                         </div>
                         <div class="services-content">
-                            <h3>Appointment Management</h3>
+                            <h3>Appointments</h3>
                             <p>
-                                Enables booking and monitoring appointments with healthcare providers, including alerts
-                                and capturing appointment
-                                outcomes.
+                                Book, track outcomes, and receive appointment alerts.
                             </p>
                         </div>
                     </div>
@@ -337,9 +408,7 @@
                         <div class="services-content">
                             <h3>Health Information</h3>
                             <p>
-                                Uses a trained AI medical model to answer myriad health questions, providing a single
-                                source of medical truth in
-                                confidence.
+                                Trusted AI answers health questions confidently.
                             </p>
                         </div>
                     </div>
@@ -347,18 +416,12 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="services-card p-3 h-100">
                         <div class="service-img mb-4">
-                            <img src="assets/icons/octicon_shield-lock-24.svg"  alt="monitor" />
+                            <img src="assets/icons/octicon_shield-lock-24.svg" alt="monitor" />
                         </div>
                         <div class="services-content">
-                            <h3>Access Control Governance</h3>
+                            <h3>Data Security</h3>
                             <p>
-                            You can authorize your care provider or any medical consultant anywhere in
-                            the world to view your health records and
-                            understand your health journey before prescribing treatment. This access can be granted for
-                            a fixed duration and
-                            extended if required. You have the option to select what information they can see, and you
-                            can revoke access at any
-                            point in time.
+                                Control, manage, and revoke secure access to your health records.
                             </p>
                         </div>
                     </div>
@@ -372,7 +435,7 @@
     <section class="review-section">
         <div class="container">
             <div class="review-heading text-center">
-                <h1>Our <span>Trustpilot</span> Reviews</h1>
+                <h1>Our <span>Trustpilot</span> <br class="d-sm-none"> Reviews</h1>
             </div>
             <div class="container h-100">
                 <!-- Slider main container -->
@@ -512,7 +575,7 @@
                     <div class="footer-card">
                         <div class="footer-img">
                             <a href="">
-                                <img src="assets/images/logo.png" width="150" alt="" class="img-fluid">
+                                <img src="assets/images/logo.png" width="170" alt="" class="img-fluid">
                             </a>
                         </div>
                         <div class="footer-content">
@@ -541,8 +604,7 @@
                         <li class="nav-item"><a href="/user-dashboard/hospitals.html" class="nav-link">Hospitals</a>
                         </li>
                         <li class="nav-item"><a href="#" class="nav-link">Pharmacies</a></li>
-                        <li class="nav-item"><a href="/user-dashboard/Chemists.html" class="nav-link">Community Digital
-                                Health Assistants</a></li>
+                        <li class="nav-item"><a href="/user-dashboard/Chemists.html" class="nav-link">Certified Digital Health Practitioner</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Tech Support</a></li>
                         <li class="nav-item"><a href="/user-dashboard/complaints.html" class="nav-link">Complaints</a>
                         </li>
@@ -567,7 +629,7 @@
         </div>
         <hr class="mt-5 mb-2">
         <div class="copyright-section d-flex align-items-center">
-            <p class="font-size">© Copyright 2025 HealthMonitor. All rights reserved</p>
+            <p class="font-size">© Copyright 2025 HealthCentreApp. All rights reserved
             <p class="ms-md-auto me-3 font-size">Share on socials</p>
             <div class="social-media">
                 <button id="x-share-btn" class="btn p-0 border-0">
@@ -596,29 +658,49 @@
             <iframe src="https://www.youtube.com/embed/1WGTftm_IEU?si=LRPCj-aTZp5tMti9"></iframe>
         </div>
     </div>
+
     <script>
-        const token = localStorage.getItem('token');
+        const cookiesAccepted = localStorage.getItem('cookiesAccepted');
 
-            if (token) {
-                document.querySelector('.login-btn').style.display = 'none';
-            }
+        if (cookiesAccepted === 'true') {
+             document.getElementById('cookiesBanner').classList.add('d-none')
+             document.getElementById('cookiesOverlay').classList.add('d-none')
+            }else{
+                document.getElementById('cookiesBanner').classList.remove('d-none')
+                document.getElementById('cookiesOverlay').classList.remove('d-none')
+        }
 
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted' , true)
+            document.getElementById('cookiesBanner').style.display = 'none';
+            document.getElementById('cookiesOverlay').style.display = 'none';
+        }
+        function declineCookies() {
+            document.getElementById('cookiesOverlay').style.display = 'none';
+        }
+        function showSettings() {
+            document.getElementById('cookiesOverlay').style.display = 'flex';
+        }
+        if (window.innerWidth < 768) {
+            document.getElementById('cookiesBanner').style.display = 'none';
+            document.getElementById('cookiesOverlay').style.display = 'flex';
+        }
 
         document.getElementById('linkedin-share-btn').addEventListener(('click'), () => {
             const shareUrl = "https://www.linkedin.com/sharing/share-offsite";
 
             const params = new URLSearchParams({
                 url: "https://health-monitor-sa.vercel.app/",
-                title: "Health Monitor",
+                title: "HealthCentreApp",
                 summary: "A smarter way to track and manage your health with our intuitive dashboard. Gain complete control over your well-being, all in one place", // Summary text
-                source: "Health Monitor"
+                source: "HealthCentreApp"
             }).toString();
 
             window.open(`${shareUrl}?${params}`, "_blank", "width=600,height=400");
         })
 
         document.getElementById('x-share-btn').addEventListener(('click'), () => {
-            const tweetText = encodeURIComponent("A smarter way to track and manage your health with our intuitive dashboard. Gain complete control over your well-being, all in one place: https://health-monitor-sa.vercel.app/ #healthMonitor");
+            const tweetText = encodeURIComponent("A smarter way to track and manage your health with our intuitive dashboard. Gain complete control over your well-being, all in one place: https://health-monitor-sa.vercel.app/ #HealthCentreApp");
             const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
             window.open(tweetUrl, "_blank", "width=600,height=400");
         })
@@ -626,9 +708,9 @@
         document.getElementById('fb-share-btn').addEventListener(('click'), () => {
             const fbShareUrl = "https://www.facebook.com/sharer/sharer.php";
             const params = new URLSearchParams({
-                u: "https://health-monitor-sa.vercel.app/", // Your website URL
+                u: "https://health-monitor-sa.vercel.app/", 
                 quote: "A smarter way to track and manage your health with our intuitive dashboard. Gain complete control over your well-being, all in one place", // Text to share
-                hashtag: "#healthMonitor", // Optional hashtag
+                hashtag: "#HealthCentreApp",
             }).toString();
 
             const shareUrl = `${fbShareUrl}?${params}`;

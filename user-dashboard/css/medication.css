@@ -525,7 +525,7 @@ a {
 }
 
 .medications-table {
-  width: 100%;
+  width: 800px !important;
   border-collapse: separate;
   border-spacing: 0 8px;
 }
@@ -979,6 +979,7 @@ a {
 }
 
 .content-wrapper {
+  width: 100% !important;
   background: white;
   border-radius: 16px;
   padding: 24px;
@@ -988,7 +989,7 @@ a {
 
 /* Responsive Table Styles */
 .medications-table {
-  width: 100%;
+  width: 800px !important;
   min-width: 800px; /* Ensures table content doesn't get too squeezed */
   border-collapse: separate;
   border-spacing: 0 8px;
@@ -1105,7 +1106,7 @@ a {
   }
 
   .page-header {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: flex-start;
   }
 
@@ -1122,6 +1123,11 @@ a {
   font-weight: 600;
   white-space: nowrap;
   display: inline-block;
+}
+
+.status-badge.red-active {
+  background: var(--container-fill, #ff9999);
+  color: #c20c0c;
 }
 
 .status-badge.active {
@@ -1578,7 +1584,7 @@ a {
 
   .medications-table {
     display: block;
-    width: 100%;
+    width: 800px !important;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -1604,13 +1610,19 @@ a {
 
 @media (max-width: 768px) {
   .page-header {
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 16px;
     align-items: flex-start;
   }
 
   .add-new {
-    width: 100%;
+    width: auto !important;
+    padding: 4px 20px !important;
+    height: auto !important;
+  }
+
+  .page-title{
+    margin: 0 !important;
   }
 
   .ad-container {
@@ -1711,7 +1723,7 @@ a {
 }
 .preview-modal {
   width: 598px;
-  height: 446px;
+  height: 480px;
   border-radius: 8px;
   position: relative;
   background: white !important;
@@ -1841,7 +1853,7 @@ a {
 }
 .preview-modal {
   width: 598px;
-  max-height: 446px;
+  max-height: 480px !important;
   border-radius: 30px;
   position: relative;
   background: white;
@@ -1913,4 +1925,72 @@ a {
 .share-dropdown-item:hover {
   background: #f1f8fe;
   color: #0c75c2;
+}
+.medications-table-container {
+  width: 100%;
+  overflow: scroll;
+}
+
+.medications-table {
+  width: 800px !important;
+}
+
+@media (max-width: 991px) {
+  .medications-table-container {
+    width: 100% !important;
+    overflow-x: auto !important; /* Ensure horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    display: block;
+    max-width: 100%; /* Ensure it doesn’t exceed screen size */
+    white-space: nowrap; /* Prevent content wrapping */
+    position: relative; /* Ensure it respects the content inside */
+  }
+
+  .medications-table {
+    min-width: 150% !important; /* Ensure enough space for buttons */
+    width: auto !important;
+    display: table;
+  }
+}
+
+@media (max-width: 600px) {
+  .medications-table {
+    min-width: 200% !important; /* Ensure enough space for buttons */
+  }
+}
+
+.status-dropdown-container {
+  border-radius: 10px !important;
+  background: linear-gradient(90deg, #0c75c2 0%, #1ecee4 100%);
+}
+
+.status-dropdown-container select{
+  border: none;
+  outline: none;
+  border-right: 5px solid #00000000 !important;
+  border-radius: 10px !important;
+  padding: 7px 15px;
+  background: transparent;
+  color: white;
+}
+.status-dropdown-container option{
+    background: white;
+  }
+
+.medication-row {
+  cursor: pointer;
+}
+
+.miss-doses-box{
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+.miss-doses-box h4{
+  color: #dc2626;
+}
+
+.medication-disable-row td{
+  background: rgb(211, 211, 211) !important;
+  opacity: 70% !important;
 }
