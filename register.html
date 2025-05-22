@@ -301,7 +301,7 @@
             })
 
             const sendEmail = () => {
-                axios.post('https://health-monitor-backend.vercel.app/email_verification', emailData).then((res) => {
+                axios.post('https://health-monitor-backend.vercel.app/api/email_verification', emailData).then((res) => {
                     console.log(res.data);
                     localStorage.removeItem('email');
                 }).catch((error) => {
