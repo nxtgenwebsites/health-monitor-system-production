@@ -1341,8 +1341,8 @@ a {
 }
 
 .logo {
-  width: 145px !important;
-  height: 125px !important;
+  width: 205px !important;
+  height: 105px !important;
 }
 
 .notification-icon img{
@@ -1512,7 +1512,7 @@ position: relative;
 
 @media (max-width: 992px) {
   .logo {
-    width: 100px !important;
+    width: 160px !important;
     height: 80px !important;
   }
 }

@@ -939,145 +939,151 @@
                         </div>
                     </div>
                 </div>
+                <form id="user-details-form">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <select class="form-select" id="title" required>
+                                <option selected disabled value="">Title</option>
+                                <option>Mr</option>
+                                <option>Mrs</option>
+                                <option>Ms</option>
+                                <option>Miss</option>
+                                <option>Pst</option>
+                                <option>Rev</option>
+                                <option>Alhj</option>
+                                <option>Dr</option>
+                                <option>Prof</option>
+                                <option>Mst</option>
+                                <option>Hon</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <input type="text" required class="form-control" id="name" placeholder="First Name">
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <input type="text" class="form-control" id="middle_name" placeholder="Middle Name">
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <input type="text" class="form-control" id="last_name" placeholder="Surname">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select class="form-select" id="gender" required>
+                                <option selected disabled value="">Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select class="form-select" id="marital_status" required>
+                                <option selected disabled value="">Marital Status</option>
+                                <option>Single</option>
+                                <option>Married</option>
+                                <option>Divorced</option>
+                                <option>Widowed</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input type="text" class="form-control" required id="dob" placeholder="Date of Birth">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select class="form-select" id="country" required>
+                                <option selected disabled value="">Nationality</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control" required id="contact_no" placeholder="Contact No.">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control" required id="confirm_contact_no"
+                                placeholder="Confirm Contact No.">
+                        </div>
 
-                <div class="row g-3">
-                    <div class="col-12">
-                        <select class="form-select">
-                            <option selected disabled>Title</option>
-                            <option>Mr</option>
-                            <option>Mrs</option>
-                            <option>Ms</option>
-                            <option>Miss</option>
-                            <option>Pst</option>
-                            <option>Rev</option>
-                            <option>Alhj</option>
-                            <option>Dr</option>
-                            <option>Prof</option>
-                            <option>Mst</option>
-                            <option>Hon</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <input type="text" class="form-control" placeholder="First Name">
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <input type="text" class="form-control" placeholder="Middle Name">
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <input type="text" class="form-control" placeholder="Surname">
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <select class="form-select">
-                            <option selected disabled>Gender</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <select class="form-select">
-                            <option selected disabled>Marital Status</option>
-                            <option>Single</option>
-                            <option>Married</option>
-                            <option>Divorced</option>
-                            <option>Widowed</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <input type="text" class="form-control" placeholder="Date of Birth">
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <select class="form-select" id="country">
-                            <option selected disabled>Nationality</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="tel" class="form-control" placeholder="Contact No.">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="tel" class="form-control" placeholder="Confirm Contact No.">
-                    </div>
-
-                    <div class="col-md-6">
-                        <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="email" class="form-control" placeholder="Confirm Email">
-                    </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" required id="email" placeholder="Email">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" required id="confirm-email"
+                                placeholder="Confirm Email">
+                        </div>
 
 
-                    <div class="col-12" id="cdha-relationship">
-                        <select class="form-select">
-                            <option selected disabled>Relationship</option>
-                            <option>Self</option>
-                            <option>Spouse</option>
-                            <option>Child</option>
-                            <option>Parent</option>
-                            <option>Sibling</option>
-                        </select>
+                        <div class="col-12" id="cdha-relationship">
+                            <select class="form-select" id="relationship">
+                                <option selected disabled value="">Relationship</option>
+                                <option>Self</option>
+                                <option>Spouse</option>
+                                <option>Child</option>
+                                <option>Parent</option>
+                                <option>Sibling</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select class="form-select" id="education_level" required>
+                                <option selected disabled value="">Education Level</option>
+                                <option>None</option>
+                                <option>Primary</option>
+                                <option>High School</option>
+                                <option>Bachelor's Degree</option>
+                                <option>Master's Degree</option>
+                                <option>Doctorate</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select class="form-select" id="employment_status" required>
+                                <option selected disabled value="">Employment Status</option>
+                                <option>Employed</option>
+                                <option>Self-Employed</option>
+                                <option>Unemployed</option>
+                                <option>Student</option>
+                                <option>Retired</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary px-4">Save</button>
+                        </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <select class="form-select">
-                            <option selected disabled>Education Level</option>
-                            <option>None</option>
-                            <option>Primary</option>
-                            <option>High School</option>
-                            <option>Bachelor's Degree</option>
-                            <option>Master's Degree</option>
-                            <option>Doctorate</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <select class="form-select">
-                            <option selected disabled>Employment Status</option>
-                            <option>Employed</option>
-                            <option>Self-Employed</option>
-                            <option>Unemployed</option>
-                            <option>Student</option>
-                            <option>Retired</option>
-                        </select>
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary px-4">Save</button>
-                    </div>
-                </div>
+                </form>
             </div>
 
             <!-- Residential Details Section -->
             <div class="details-section mb-4">
                 <h6 class="main-title mb-4">Residential Details</h6>
-                <div class="row g-3">
-                    <div class="col-12 col-md-6">
-                        <select class="form-select" id="country2">
-                            <option selected disabled>Country</option>
-                        </select>
+                <form id="residential-details">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <select class="form-select" id="country2" required>
+                                <option selected disabled value="">Country</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select class="form-select" id="state-drop-down" required>
+                                <option selected disabled value="">State</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select class="form-select" id="residence-city" required>
+                                <option selected disabled value="">City of Residence</option>
+                                <option>City 1</option>
+                                <option>City 2</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <select class="form-select" id="residence-town" required>
+                                <option selected disabled value="">Town of Residence</option>
+                                <option>Town 1</option>
+                                <option>Town 2</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control" required id="residence-address"
+                                placeholder="Current Residential Address">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary px-4" type="submit">Save</button>
+                        </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <select class="form-select" id="state-drop-down">
-                            <option selected disabled>State</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <select class="form-select">
-                            <option selected disabled>City of Residence</option>
-                            <option>City 1</option>
-                            <option>City 2</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <select class="form-select">
-                            <option selected disabled>Town of Residence</option>
-                            <option>Town 1</option>
-                            <option>Town 2</option>
-                        </select>
-                    </div>
-                    <div class="col-12">
-                        <input type="text" class="form-control" placeholder="Current Residential Address">
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary px-4">Save</button>
-                    </div>
-                </div>
+                </form>
             </div>
 
             <!-- Children Details Section -->
@@ -1453,14 +1459,17 @@
             <!-- Notes Section -->
             <div class="details-section">
                 <h6 class="main-title mb-4">Notes</h6>
-                <div class="row g-3">
-                    <div class="col-12">
-                        <input type="text" class="form-control" placeholder="Add any information">
+                <form id="notes-form">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="user-notes" required
+                                placeholder="Add any information">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary px-4" type="submit">Save</button>
+                        </div>
                     </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary px-4">Save</button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
         <!-- Call Remote Care Popup -->
@@ -1587,200 +1596,253 @@
             </div>
         </div>
     </div>
+    <div class="popup d-none justify-content-center align-items-center" id="updated-popup">
+        <div class="updated-box bg-white rounded text-center position-relative ">
+            <h5 class="my-3 test-primary">Your changes have been successfully updated.</h5>
+            <div class="d-flex  gap-4 justify-content-center mt-4">
+                <button class="popup-btn" id="updated-back-btn">Back</button>
+            </div>
+            <div class="close-btn">
+                <button class="btn border-0" type="submit" id="updated-close-btn"><img src="assets/icons/close.svg"
+                        alt="close"></button>
+            </div>
+        </div>
+    </div>
     <!-- Share Message end -->
     <script src="js/country-states.js"></script>
-    <script>
-        localStorage.setItem('profile-completed', true);
-        var user_country_code = "";
-
-        (() => {
-            const country_list = country_and_states.country;
-            const state_list = country_and_states.states;
-
-            const id_state_option = document.getElementById("state-drop-down");
-            const id_country_option = document.getElementById("country2");
-
-            // Initially disable the state dropdown
-            id_state_option.innerHTML = '<option>State of Residence</option>';
-            id_state_option.setAttribute("disabled", "disabled");
-
-            const create_country_selection = () => {
-                let option = '<option value="" selected disabled>Country of Residence</option>'; // Placeholder option
-                for (const country_code in country_list) {
-                    option += '<option value="' + country_code + '">' + country_list[country_code] + '</option>';
-                }
-                id_country_option.innerHTML = option;
-            };
-
-            const create_states_selection = () => {
-                let selected_country_code = id_country_option.value;
-                let state_names = state_list[selected_country_code];
-
-                if (!state_names) {
-                    id_state_option.innerHTML = '<option>select state</option>';
-                    id_state_option.setAttribute("disabled", "disabled");
-                    return;
-                }
-
-                let option = '<option>select state</option>';
-                state_names.forEach(state => {
-                    option += '<option value="' + state.code + '">' + state.name + '</option>';
-                });
-
-                id_state_option.innerHTML = option;
-                id_state_option.removeAttribute("disabled"); // Enable dropdown when country is selected
-            };
-
-            // Country select change event update state dropdown
-            id_country_option.addEventListener('change', create_states_selection);
-
-            // Initialize country dropdown with placeholder
-            create_country_selection();
-        })();
-
-
-        // JavaScript (no need for country list or state handling now)
-        (() => {
-            const country_list = country_and_states.country;
-            const id_country_option = document.getElementById("country");
-
-            const create_country_selection = () => {
-                let option = '<option value="" selected disabled>Nationality</option>'; // Placeholder option
-                for (const country_code in country_list) {
-                    option += '<option value="' + country_code + '">' + country_list[country_code] + '</option>';
-                }
-                id_country_option.innerHTML = option;
-            };
-
-            // Initialize country dropdown with placeholder and country options
-            create_country_selection();
-        })();
-
-
-        function redirectToPatientSearch(pageURL) {
-            localStorage.setItem("redirectAfterPopup", pageURL);
-            window.location.href = "/user-dashboard/dha-search-patient.html";
-        }
-
-        const cdhaProfile = document.getElementById('cdha-profile');
-        const userProfile = document.getElementById('user-profile');
-
-        const dhaMonitorsMenu = document.getElementById('dha-monitors-menu');
-        const normalMonitorsMenu = document.getElementById('normal-monitors-menu');
-
-        const dhaMonitorsMobile = document.getElementById('dha-monitors-mobile');
-        const normalMonitorsMobile = document.getElementById('normal-monitors-mobile');
-
-        const patientLink = document.getElementById('patient-link');
-        const patientDropDown = document.getElementById('patient-drop-down');
-
-        const checkUser = localStorage.getItem('dha-user')
-
-        if (checkUser === 'true') {
-            userProfile.classList.add('d-lg-none');
-            patientLink.classList.add('d-none');
-            normalMonitorsMenu.classList.add('d-none');
-            normalMonitorsMobile.classList.add('d-none');
-            document.getElementById('cdha-relationship').classList.remove('d-none');
-        } else {
-            document.getElementById('cdha-relationship').classList.add('d-none');
-            patientDropDown.classList.add('d-none');
-            cdhaProfile.classList.add('d-lg-none');
-            dhaMonitorsMenu.classList.add('d-none');
-            dhaMonitorsMobile.classList.add('d-none');
-        }
-
-        let inactivityTime = 120000;
-        let timeout;
-
-        function resetTimer() {
-            clearTimeout(timeout);
-            document.getElementById("logoutModal").style.display = "none";
-            timeout = setTimeout(showLogoutScreen, inactivityTime);
-        }
-
-        function showLogoutScreen() {
-            document.getElementById("logoutModal").classList.add('d-flex');
-        }
-
-        document.addEventListener("mousemove", resetTimer);
-        document.addEventListener("keydown", resetTimer);
-        document.addEventListener("scroll", resetTimer);
-        document.addEventListener("click", resetTimer);
-
-        resetTimer();
-
-        // Share Message
-        const shareMsg = document.querySelector('.share-message');
-        const crossIcon = document.querySelector('.share-img i');
-        const blockBtn = document.querySelector('#share')
-
-        const remoteCareDropdown = document.getElementById('m-remote-care-dropdown');
-        const remoteCareDropdownBtn = document.getElementById('remote-care-dropdown');
-        const remoteCareBtn = document.querySelectorAll('.remote-care-btn');
-        const pairDevicePopop = document.getElementById('paired-device-popup');
-        const pairedBackBtn = document.getElementById('paired-black-btn');
-        const pairedCloseBtn = document.getElementById('paired-close-btn');
-
-        const shareProfilePopup = document.getElementById('share-profile-popup');
-        const shareProfileBtn = document.getElementById('share-profile-btn');
-        const ProfileCloseBtn = document.getElementById('profile-close-btn');
-
-        ProfileCloseBtn.addEventListener('click', () => {
-            shareProfilePopup.classList.toggle('d-none')
-        })
-
-        shareProfileBtn.addEventListener('click', () => {
-            shareProfilePopup.classList.remove('d-none');
-            shareProfilePopup.classList.add('d-flex');
-        })
-
-
-        pairedBackBtn.addEventListener('click', () => {
-            pairDevicePopop.classList.add('d-none');
-        })
-        pairedCloseBtn.addEventListener('click', () => {
-            pairDevicePopop.classList.add('d-none');
-        })
-        crossIcon.addEventListener('click', () => {
-            shareMsg.style.display = 'none';
-        });
-
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const dropdownMenu = document.querySelector(".menu-item-dropdown .dropdown-menu");
-            if (dropdownMenu) {
-                dropdownMenu.classList.add("show");
-            }
-
-            const arrowIcon = document.querySelector(".menu-item-dropdown .main-arrow");
-            if (arrowIcon) {
-                arrowIcon.style.transform = "rotate(90deg)";
-            }
-        });
-
-        const addImg = document.getElementById('add-1-img');
-        const addImgPupup = document.getElementById('add-1-popup');
-        const addImgClose = document.getElementById('add-close-btn');
-
-
-        addImgPupup.addEventListener(('click'), (e) => {
-            if (e.target === addImgPupup) {
-                addImgPupup.classList.add('d-none')
-            }
-        })
-
-        addImg.addEventListener(('click'), () => {
-            addImgPupup.classList.remove('d-none')
-        })
-
-        addImgClose.addEventListener(('click'), () => {
-            addImgPupup.classList.add('d-none')
-        })
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/sidebar.js"></script>
+    <script src="js/add-patient.js"></script>
     <script>
+
+    </script>
+    <script>
+        const uid = localStorage.getItem('u_id')
+
+
+        function getData() {
+            axios.get(`https://health-monitor-backend.vercel.app/api/get-user/${uid}`)
+                .then((res) => {
+                    const data = res.data.data;
+                    console.log(data);
+
+                    if (data) {
+                        const setField = (id, value, placeholder) => {
+                            const field = document.getElementById(id);
+                            if (!field) return;
+
+                            if (field.tagName === 'SELECT') {
+                                let matched = false;
+                                for (let i = 0; i < field.options.length; i++) {
+                                    if (field.options[i].text === value) {
+                                        field.selectedIndex = i;
+                                        matched = true;
+                                        break;
+                                    }
+                                }
+                                if (!matched) field.selectedIndex = 0;
+                            } else {
+                                field.value = value || '';
+                                field.placeholder = value ? '' : placeholder;
+                            }
+                        };
+
+
+                        // Personal Details
+                        setField('title', data?.title, 'Title');
+                        setField('email', data?.email, 'Email');
+                        setField('confirm-email', data?.email, 'Confirm Email');
+                        setField('name', data?.name, 'Full Name');
+                        setField('middle_name', data?.middle_name, 'Middle Name');
+                        setField('last_name', data?.last_name, 'Last Name');
+                        setField('username', data?.username, 'Username');
+                        setField('gender', data?.gender, 'Gender');
+                        setField('country', data?.nationality, 'Nationality');
+                        console.log(data?.nationality);
+                        setField('marital_status', data?.marital_status, 'Marital Status');
+                        setField('dob', data?.dob, 'Date of Birth');
+                        setField('relationship', data?.relationship, 'Relationship');
+                        setField('contact_no', data?.contact_no, 'Contact Number');
+                        setField('confirm_contact_no', data?.contact_no, 'Confirm Contact');
+                        setField('education_level', data?.education_level, 'Education Level');
+                        setField('employment_status', data?.employment_status, 'Employment Status');
+
+                        // Residential Details
+                        document.querySelector('#country2 option:checked').textContent = data?.country;
+                        document.querySelector('#state-drop-down option:checked').textContent = data?.state;
+                        setField('residence-city', data?.city, 'City');
+                        setField('residence-town', data?.town, 'Town');
+                        setField('residence-address', data?.address, 'Address');
+
+                        // Children Details
+                        // setField('children_no', data?.children_no, 'Number of Children');
+                        // setField('children_number', data?.children_number, 'Children Name');
+                        // setField('children_gender', data?.children_gender, 'Children Gender');
+                        // setField('children_dob', data?.children_dob, 'Children Date of Birth');
+
+                        // Next of Kin
+                        // setField('kin_relationship', data?.kin_relationship, "Kin's Relationship");
+                        // setField('kin_name', data?.kin_name, "Full Name");
+                        // setField('kin_gender', data?.kin_gender, "Gender");
+                        // setField('kin_contact_no', data?.kin_contact_no, "Contact No.");
+                        // setField('kin_email', data?.kin_email, "Email");
+
+                        // Notes
+                        setField('user-notes', data?.notes, 'Add any information');
+                    }
+
+
+                    // const kinContainer = document.getElementById('kin_container');
+                    // const kinData = data.next_of_kin
+                    // if (!kinData || kinData.length === 0) {
+                    //     document.getElementById('kin_defult-form').classList.remove('d-none')
+                    // } else {
+                    //     kinData.map((item, i) => {
+                    //         kinContainer.innerHTML += `<div class="mt-5">
+                    //     <div class="d-flex mb-4 justify-content-between align-items-center">
+                    //         <h6 class="text-primary mb-0">${item.kin_name}</h6>
+                    //          <button class="dropdown-toggle-kin dropdown-toggle  toggle-from-btn" data-index="${i}"></button>
+                    //     </div>
+                    //     <form id="next-of-kin-${i}" class="d-none">
+                    //         <div class="row g-3">
+                    //             <div class="col-12">
+                    //                 <input type="text" id="kin_relationship" value="${item.kin_relationship}" class="form-control"
+                    //                     placeholder="Kin's Relationship">
+                    //             </div>
+                    //             <div class="col-12">
+                    //                 <input type="text" id="kin_name" class="form-control" value="${item.kin_name}" placeholder="Full Name">
+                    //             </div>
+                    //             <div class="col-12">
+                    //                 <select class="form-select" id="kin_gender" value="${item.kin_gender}">
+                    //                     <option selected disabled>Gender</option>
+                    //                     <option>Male</option>
+                    //                     <option>Female</option>
+                    //                     <option>Other</option>
+                    //                 </select>
+                    //             </div>
+                    //             <div class="col-md-6">
+                    //                 <input type="tel" class="form-control" id="kin_contact_no" value="${item.kin_contact_no}" placeholder="Contact No.">
+                    //             </div>
+                    //             <div class="col-md-6">
+                    //                 <input type="tel" class="form-control" placeholder="Confirm Contact No." value="${item.kin_contact_no}">
+                    //             </div>
+                    //             <div class="col-md-6">
+                    //                 <input type="email" class="form-control" id="kin_email" placeholder="Email" value="${item.kin_email}">
+                    //             </div>
+                    //             <div class="col-md-6">
+                    //                 <input type="email" class="form-control" placeholder="Confirm Email" value="${item.kin_email}">
+                    //             </div>
+                    //         </div>
+                    //     </form>
+                    // </div>`;
+                    //     })
+
+                    //     document.querySelectorAll('.toggle-from-btn').forEach(button => {
+                    //         console.log(button);
+                    //         button.addEventListener('click', function () {
+                    //             const index = this.getAttribute('data-index');
+                    //             const form = document.getElementById(`next-of-kin-${index}`);
+                    //             console.log(form);
+                    //             if (form) {
+                    //                 form.classList.toggle('d-none');
+                    //             }
+                    //         });
+                    //     });
+                    // }
+
+                    // const addNewKin = document.getElementById('add-new-kin');
+
+                    // console.log(addNewKin);
+
+                    // addNewKin.addEventListener(('click'), () => {
+                    //     document.getElementById('kin_defult-form').classList.remove('d-none')
+                    // })
+
+                })
+                .catch((error) => {
+                    console.error("Error fetching user data:", error);
+                });
+        };
+
+        getData()
+
+        const userDetailsForm = document.getElementById('user-details-form');
+        userDetailsForm.addEventListener(('submit'), (e) => {
+            e.preventDefault()
+            const data = {
+                title: document.getElementById('title').value,
+                email: document.getElementById('email').value,
+                name: document.getElementById('name').value,
+                middle_name: document.getElementById('middle_name').value,
+                last_name: document.getElementById('last_name').value,
+                gender: document.getElementById('gender').value,
+                nationality: document.getElementById('country').options[document.getElementById('country').selectedIndex].text,
+                marital_status: document.getElementById('marital_status').value,
+                dob: document.getElementById('dob').value,
+                relationship: document.getElementById('relationship').value,
+                contact_no: document.getElementById('contact_no').value,
+                education_level: document.getElementById('education_level').value,
+                employment_status: document.getElementById('employment_status').value,
+            }
+
+            axios.post(`https://health-monitor-backend.vercel.app/api/profile/personal_details/${uid}`, data).then((res) => {
+                // userDetailsForm.reset();
+                getData()
+                document.getElementById('updated-popup').classList.remove('d-none')
+            }).catch((error) => {
+                console.log(error);
+            });
+            console.log(data);
+        })
+
+        const notesForm = document.getElementById('notes-form');
+        notesForm.addEventListener(('submit'), (e) => {
+            e.preventDefault()
+            const data = {
+                notes: document.getElementById('user-notes').value,
+            }
+
+            axios.post(`https://health-monitor-backend.vercel.app/api/profile/notes/${uid}`, data).then((res) => {
+                console.log(res.data);
+                document.getElementById('updated-popup').classList.remove('d-none')
+            }).catch((error) => {
+                console.log(error);
+            });
+            console.log(data);
+        })
+
+        const residentialDetails = document.getElementById('residential-details');
+        residentialDetails.addEventListener(('submit'), (e) => {
+            e.preventDefault()
+            const data = {
+                country: document.getElementById('country2').options[document.getElementById('country2').selectedIndex].text,
+                state: document.getElementById('state-drop-down').options[document.getElementById('state-drop-down').selectedIndex].text,
+                city: document.getElementById('residence-city').value,
+                town: document.getElementById('residence-town').value,
+                address: document.getElementById('residence-address').value,
+            }
+
+            axios.post(`https://health-monitor-backend.vercel.app/api/profile/residential_details/${uid}`, data).then((res) => {
+                console.log(res.data);
+                document.getElementById('updated-popup').classList.remove('d-none')
+            }).catch((error) => {
+                console.log(error);
+            });
+            console.log(data);
+        })
+        const updateBtn = document.getElementById('update-btn');
+        const updatedPopup = document.getElementById('updated-popup');
+        const updateClose = document.getElementById('updated-close-btn');
+        const updateBack = document.getElementById('updated-back-btn');
+
+        updateClose.addEventListener(('click'), () => {
+            updatedPopup.classList.add('d-none')
+        })
+
+        updateBack.addEventListener(('click'), () => {
+            updatedPopup.classList.add('d-none')
+        })
 
         document.addEventListener('DOMContentLoaded', function () {
             const dateInputs = document.querySelectorAll('.date-input');

@@ -2324,3 +2324,16 @@ color: #2E2E2E;
   cursor: pointer;
   color: #8B8D97 !important;
 }
+
+
+.updated-box {
+  max-width: 572px;
+  width: 100%;
+  padding: 40px 30px;
+}
+
+.updated-box h5 {
+  font-size: 23px;
+  color: #00B67B;
+  font-weight: 500;
+}
