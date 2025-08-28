@@ -11,6 +11,111 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/emergency.css" />
+    <!-- Added Leaflet CSS for proper map styling -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 500px !important;
+            width: 100% !important;
+        }
+
+        /* Improved map container styling to prevent overflow */
+        .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #map {
+            height: 500px !important;
+            width: 100% !important;
+            border-radius: 10px;
+        }
+
+        /* Hospital cards styling */
+        .hospital-cards {
+            margin-top: 20px;
+        }
+
+        .hospital-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #007bff;
+            transition: transform 0.3s ease;
+        }
+
+        .hospital-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .hospital-name {
+            color: #007bff;
+            font-weight: 600;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+
+        .hospital-type {
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .hospital-address {
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .hospital-phone {
+            color: #28a745;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .hospital-distance {
+            color: #17a2b8;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .directions-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+
+        .directions-btn:hover {
+            background: #1e7e34;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+        }
+
+        .error {
+            text-align: center;
+            padding: 20px;
+            color: #dc3545;
+            background: #f8d7da;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,8 +130,9 @@
                     <img src="assets/images/trustpilot.png" class="img-fluid" alt="logo">
                 </dv>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -54,55 +160,44 @@
         </div>
     </nav>
     <!-- Navbar End -->
-    <!-- Emergency start -->
-    <section class="emergency-section">
-        <div class="container">
-            <div class="row row-gap-4">
-                <div class="col-lg-6">
-                    <div class="emergency-card">
-                        <div class="emergency-heading">
-                            <h1 class="first-heading">Find Nearest</h1>
-                            <h1 class="second-heading fw-medium">Emergency Help</h1>
-                            <p class="mt-5">Locate the nearest open hospital or emergency facility based
-                                on your location in just a few clicks.</p>
-                            <a href="#Map"><button type="button" class="btn text-white rounded-pill">Find Nearest
-                                    Hospital</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="emergency-card">
-                        <div class="emergency-img d-none d-lg-block">
-                            <img src="assets/images/Fact Checker img 2.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="emergency-img d-block d-lg-none">
-                            <img src="assets/images/Emergency img.svg" alt="" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Map start -->
-            <div class="map-section">
-                <div class="map-heading">
-                    <h2 class="fw-medium mb-3">Nearby Medical Facility</h2>
-                    <div class="current-location d-flex">
-                        <img src="assets/icons/current location.svg" alt="IMG" class="mb-3" id="current-location"
-                            width="26px" height="26px">
-                    </div>
-                </div>
-                <div class="map">
-                    <iframe id="map-iframe" class="position-relative w-100"
-                        src="https://www.google.com/maps?q=&output=embed" frameborder="0" width="1224px" height="640px"
-                        allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                </div>
-            </div>
 
-            <!-- Map end -->
+    <!-- Main content section with map and search -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">Find Nearby Hospitals</h2>
+
+                    <!-- Improved map container -->
+                    <div class="map-container">
+                        <div id="map"></div>
+                    </div>
+
+                    <!-- Loading indicator -->
+                    <div id="loading" class="loading">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="mt-2">Finding nearby hospitals...</p>
+                    </div>
+
+                    <!-- Error message -->
+                    <div id="error" class="error" style="display: none;">
+                        <h5>Unable to load hospitals</h5>
+                        <p>Please check your location settings and try again.</p>
+                    </div>
+
+                    <!-- Hospital cards section -->
+                    <div id="hospitalCards" class="hospital-cards">
+                        <h3 class="mb-4">Nearby Hospitals</h3>
+                        <div id="hospitalList" class="row">
+                            <!-- Hospital cards will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- Emergency End -->
-    <div id="container">
-    </div>
 
     <!-- Footer start -->
     <footer class="footer-section">
@@ -141,7 +236,8 @@
                         <li class="nav-item"><a href="/user-dashboard/hospitals.html" class="nav-link">Hospitals</a>
                         </li>
                         <li class="nav-item"><a href="#" class="nav-link">Pharmacies</a></li>
-                        <li class="nav-item"><a href="/user-dashboard/Chemists.html" class="nav-link">Certified Digital Health Practitioner</a></li>
+                        <li class="nav-item"><a href="/user-dashboard/Chemists.html" class="nav-link">Certified Digital
+                                Health Practitioner</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Tech Support</a></li>
                         <li class="nav-item"><a href="/user-dashboard/complaints.html" class="nav-link">Complaints</a>
                         </li>
@@ -166,7 +262,7 @@
         </div>
         <hr class="mt-5 mb-2">
         <div class="copyright-section d-flex align-items-center">
-                        <p class="font-size">© Copyright 2025 HealthCentreApp. All rights reserved</p>
+            <p class="font-size">© Copyright 2025 HealthCentreApp. All rights reserved</p>
             <p class="ms-md-auto me-3 font-size">Share on socials</p>
             <div class="social-media">
                 <button id="x-share-btn" class="btn p-0 border-0">
@@ -188,43 +284,233 @@
 
     </footer>
     <!-- Footer end -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        let map;
+        let userMarker;
+        let hospitalMarkers = [];
+        let radiusCircle;
+        let userLocation = null;
+
+        // Initialize map
+        function initMap() {
+            // Default center (Pakistan)
+            map = L.map('map').setView([33.6844, 73.0479], 10);
+
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Get user location and load hospitals automatically
+            getCurrentUserLocation();
+        }
+
+        // Calculate distance between two points in miles
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 3959; // Earth's radius in miles
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            const distance = R * c;
+            return distance;
+        }
+
+        // Get current user location
+        function getCurrentUserLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    userLocation = { lat, lon };
+
+                    // Remove existing user marker
+                    if (userMarker) {
+                        map.removeLayer(userMarker);
+                    }
+
+                    // Add user marker with blue color
+                    userMarker = L.marker([lat, lon], {
+                        icon: L.icon({
+                            iconUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9IiMwMDdiZmYiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iNCIgZmlsbD0id2hpdGUiLz4KPC9zdmc+',
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 12]
+                        })
+                    }).addTo(map);
+
+                    userMarker.bindPopup('📍 Your Current Location').openPopup();
+                    map.setView([lat, lon], 13);
+
+                    // Add 50-mile radius circle
+                    if (radiusCircle) {
+                        map.removeLayer(radiusCircle);
+                    }
+                    radiusCircle = L.circle([lat, lon], {
+                        color: '#007bff',
+                        fillColor: '#007bff',
+                        fillOpacity: 0.1,
+                        radius: 80467 // 50 miles in meters
+                    }).addTo(map);
+
+                    // Load hospitals automatically
+                    loadNearbyHospitals(lat, lon);
+                }, (error) => {
+                    console.warn('Geolocation error:', error);
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('error').style.display = 'block';
+                    document.getElementById('error').innerHTML = `
+                        <h5>Location Access Required</h5>
+                        <p>Please enable location services to find nearby hospitals.</p>
+                    `;
+                }, {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 60000
+                });
+            } else {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').innerHTML = `
+                    <h5>Geolocation Not Supported</h5>
+                    <p>Your browser doesn't support geolocation.</p>
+                `;
+            }
+        }
+
+        // Load nearby hospitals from API
+        async function loadNearbyHospitals(latitude, longitude) {
+            try {
+                const response = await fetch(`http://localhost:3000/api/hospitals/nearby?latitude=${latitude}&longitude=${longitude}`);
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch hospitals');
+                }
+
+                const data = await response.json();
+
+                document.getElementById('loading').style.display = 'none';
+
+                if (data.hospitals && data.hospitals.length > 0) {
+                    displayHospitals(data.hospitals);
+                    addHospitalMarkers(data.hospitals);
+                } else {
+                    document.getElementById('error').style.display = 'block';
+                    document.getElementById('error').innerHTML = `
+                        <h5>No Hospitals Found</h5>
+                        <p>No hospitals found within 50 miles of your location.</p>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading hospitals:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').innerHTML = `
+                    <h5>Error Loading Hospitals</h5>
+                    <p>Unable to load nearby hospitals. Please try again later.</p>
+                `;
+            }
+        }
+
+        // Display hospitals in cards
+        function displayHospitals(hospitals) {
+            const hospitalList = document.getElementById('hospitalList');
+            hospitalList.innerHTML = '';
+
+            hospitals.forEach(hospital => {
+                const hospitalLat = hospital.location.coordinates[1];
+                const hospitalLon = hospital.location.coordinates[0];
+
+                // Calculate distance if user location is available
+                let distance = 'N/A';
+                if (userLocation) {
+                    const distanceInMiles = calculateDistance(
+                        userLocation.lat, userLocation.lon,
+                        hospitalLat, hospitalLon
+                    );
+                    distance = `${distanceInMiles.toFixed(1)} miles`;
+                }
+
+                const hospitalCard = `
+                    <div class="col-md-6 mb-3">
+                        <div class="hospital-card">
+                            <div class="hospital-name">${hospital.name}</div>
+                            <div class="hospital-type">🏥 ${hospital.type}</div>
+                            <div class="hospital-address">📍 ${hospital.city}, ${hospital.state}, ${hospital.country}</div>
+                            <div class="hospital-phone">📞 ${hospital.number}</div>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="hospital-distance">📍 ${distance}</span>
+                                <button class="directions-btn" onclick="getDirections(${hospitalLat}, ${hospitalLon})">Directions</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                hospitalList.innerHTML += hospitalCard;
+            });
+        }
+
+        // Add hospital markers to map
+        function addHospitalMarkers(hospitals) {
+            // Clear existing hospital markers
+            hospitalMarkers.forEach(marker => map.removeLayer(marker));
+            hospitalMarkers = [];
+
+            hospitals.forEach(hospital => {
+                const hospitalLat = hospital.location.coordinates[1];
+                const hospitalLon = hospital.location.coordinates[0];
+
+                const marker = L.marker([hospitalLat, hospitalLon], {
+                    icon: L.icon({
+                        iconUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJaIiBmaWxsPSIjZGMzNTQ1Ii8+CjxyZWN0IHg9IjEwIiB5PSI3IiB3aWR0aD0iNCIgaGVpZ2h0PSIxMCIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iNyIgeT0iMTAiIHdpZHRoPSIxMCIgaGVpZ2h0PSI0IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4=',
+                        iconSize: [30, 30],
+                        iconAnchor: [15, 30]
+                    })
+                }).addTo(map);
+
+                // Calculate distance for popup
+                let distance = 'N/A';
+                if (userLocation) {
+                    const distanceInMiles = calculateDistance(
+                        userLocation.lat, userLocation.lon,
+                        hospitalLat, hospitalLon
+                    );
+                    distance = `${distanceInMiles.toFixed(1)} miles`;
+                }
+
+                marker.bindPopup(`
+                    <div style="text-align: center;">
+                        <strong>${hospital.name}</strong><br>
+                        🏥 ${hospital.type}<br>
+                        📍 ${hospital.city}, ${hospital.state}<br>
+                        📞 ${hospital.number}<br>
+                        📍 ${distance}
+                    </div>
+                `);
+
+                hospitalMarkers.push(marker);
+            });
+        }
+
+        // Get directions function
+        function getDirections(lat, lon) {
+            if (userLocation) {
+                const url = `https://www.google.com/maps/dir/${userLocation.lat},${userLocation.lon}/${lat},${lon}`;
+                window.open(url, '_blank');
+            } else {
+                const url = `https://www.google.com/maps/dir//${lat},${lon}`;
+                window.open(url, '_blank');
+            }
+        }
+
+        // Initialize map when page loads
+        document.addEventListener('DOMContentLoaded', initMap);
+    </script>
 
     <!-- Javascript -->
-    <script>
-        document.getElementById('linkedin-share-btn').addEventListener(('click'), () => {
-            const shareUrl = "https://www.linkedin.com/sharing/share-offsite";
-
-            const params = new URLSearchParams({
-                url: "https://health-monitor-sa.vercel.app/",
-                title: "HealthCentreApp",
-                summary: "A smarter way to track and manage your health with our intuitive dashboard. Gain complete control over your well-being, all in one place", // Summary text
-                source: "HealthCentreApp"
-            }).toString();
-
-            window.open(`${shareUrl}?${params}`, "_blank", "width=600,height=400");
-        })
-
-        document.getElementById('x-share-btn').addEventListener(('click'), () => {
-            const tweetText = encodeURIComponent("A smarter way to track and manage your health with our intuitive dashboard. Gain complete control over your well-being, all in one place: https://health-monitor-sa.vercel.app/ #HealthCentreApp");
-            const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
-            window.open(tweetUrl, "_blank", "width=600,height=400");
-        })
-
-        document.getElementById('fb-share-btn').addEventListener(('click'), () => {
-            const fbShareUrl = "https://www.facebook.com/sharer/sharer.php";
-            const params = new URLSearchParams({
-                u: "https://health-monitor-sa.vercel.app/", // Your website URL
-                quote: "A smarter way to track and manage your health with our intuitive dashboard. Gain complete control over your well-being, all in one place", // Text to share
-                hashtag: "#HealthCentreApp", // Optional hashtag
-            }).toString();
-
-            const shareUrl = `${fbShareUrl}?${params}`;
-            window.open(shareUrl, "_blank", "width=600,height=400");
-        })
-    </script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initApp" async
-        defer></script>
     <script src="js/swiper.js"></script>
     <script src="js/script.js"></script>
     <script src="js/map.js"></script>
