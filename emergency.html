@@ -359,14 +359,13 @@
 
                     userMarker = L.marker([lat, lon], {
                         icon: L.icon({
-                            iconUrl: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1IDNDMTAuMDM3NSAzIDYgNy4wMzc1IDYgMTJDNiAxOC43NSAxNSAyNyAxNSAyN0MxNSAyNyAyNCAxOC43NSAyNCAxMkMyNCA3LjAzNzUgMTkuOTYyNSAzIDE1IDNaTTE1IDE2QzEyLjc5MDkgMTYgMTEgMTQuMjA5MSAxMSAxMkMxMSA5Ljc5MDkxIDEyLjc5MDkgOCAxNSA4QzE3LjIwOTEgOCAxOSA5Ljc5MDkxIDE5IDEyQzE5IDE0LjIwOTEgMTcuMjA5MSAxNiAxNSAxNloiIGZpbGw9IiMwMDdiZmYiLz4KPC9zdmc+',
-                            iconSize: [30, 30],
-                            iconAnchor: [15, 30],
-                            className: 'user-location-marker'
+                            iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+                            shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+                            iconSize: [25, 41],
+                            iconAnchor: [12, 41]
                         })
                     }).addTo(map);
 
-                    userMarker.bindPopup('<div style="text-align: center; font-size: 18px;">📍</div>').openPopup();
                     map.setView([lat, lon], 13);
 
                     // Add 50-mile radius circle
@@ -377,7 +376,7 @@
                         color: '#007bff',
                         fillColor: '#007bff',
                         fillOpacity: 0.1,
-                        radius: 80467 // 50 miles in meters
+                        radius: 8047 // ~5 miles in meters
                     }).addTo(map);
 
                     // Load hospitals automatically
