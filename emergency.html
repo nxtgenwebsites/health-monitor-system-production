@@ -409,12 +409,17 @@
             try {
                 const response = await fetch(`https://health-monitor-backend.vercel.app/api/hospitals/nearby?latitude=${latitude}&longitude=${longitude}`);
 
+              
+                
+
                 if (!response.ok) {
                     throw new Error('Failed to fetch hospitals');
                 }
 
                 const data = await response.json();
 
+                console.log(data);
+                
                 document.getElementById('loading').style.display = 'none';
 
                 if (data.hospitals && data.hospitals.length > 0) {
@@ -460,12 +465,12 @@
                 const hospitalCard = `
                     <div class="col-md-6 mb-3">
                         <div class="hospital-card">
-                            <div class="hospital-name">${hospital.name}</div>
+                            <div class="hospital-name">${hospital.facility_name}</div>
                             <div class="hospital-type">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 5px;">
                                     <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM18 14H13V18H11V14H6V12H11V8H13V12H18V14Z" fill="#6c757d"/>
                                 </svg>
-                                ${hospital.type}
+                                ${hospital.services}
                             </div>
                             <div class="hospital-address">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 5px;">
@@ -477,7 +482,7 @@
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 5px;">
                                     <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="#28a745"/>
                                 </svg>
-                                ${hospital.number}
+                                ${hospital.phone_number}
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="hospital-distance">
@@ -525,11 +530,11 @@
 
                 marker.bindPopup(`
                     <div style="text-align: center;">
-                        <strong>${hospital.name}</strong><br>
+                        <strong>${hospital.facility_name}</strong><br>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 5px;">
                             <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM18 14H13V18H11V14H6V12H11V8H13V12H18V14Z" fill="#6c757d"/>
                         </svg>
-                        ${hospital.type}<br>
+                        ${hospital.services}<br>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 5px;">
                             <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z" fill="#6c757d"/>
                         </svg>
@@ -537,7 +542,7 @@
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 5px;">
                             <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z" fill="#28a745"/>
                         </svg>
-                        ${hospital.number}<br>
+                        ${hospital.phone_number}<br>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 5px;">
                             <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z" fill="#17a2b8"/>
                         </svg>
