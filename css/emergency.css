@@ -86,4 +86,139 @@ body {
     cursor: pointer;
 }
 
+#suggestions{
+    width: 92.6% !important;
+}
+
+#suggestions li {
+    cursor: pointer;
+    width: 100% !important;
+}
+
 /* Emergency End */
+
+#map {
+    height: 500px !important;
+    width: 100% !important;
+}
+
+/* Improved map container styling to prevent overflow */
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#map {
+    height: 500px !important;
+    width: 100% !important;
+    border-radius: 10px;
+}
+
+/* Hospital cards styling */
+.hospital-cards {
+    margin-top: 20px;
+}
+
+.hospital-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #007bff;
+    transition: transform 0.3s ease;
+}
+
+.hospital-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hospital-name {
+    color: #007bff;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.hospital-type {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.hospital-address {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.hospital-phone {
+    color: #28a745;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.hospital-distance {
+    color: #17a2b8;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.directions-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: background 0.3s ease;
+}
+
+.directions-btn:hover {
+    background: #1e7e34;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+}
+
+.error {
+    text-align: center;
+    padding: 20px;
+    color: #dc3545;
+    background: #f8d7da;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Added jump animation for user location marker */
+@keyframes jumpAnimation {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.user-location-marker {
+    animation: jumpAnimation 2s infinite;
+}
