@@ -222,3 +222,21 @@ body {
 .user-location-marker {
     animation: jumpAnimation 2s infinite;
 }
+
+#pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+.num-box {
+    margin: 0 5px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    user-select: none;
+    color: #000 !important;
+}
+
+.num-box.active {
+    background-color: var(--primary-color);
+    color: white !important;
+    font-weight: bold;
+}
